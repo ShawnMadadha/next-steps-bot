@@ -23,10 +23,11 @@
 <h2>Bots</h2>
 {% if bots %}
 <table>
-  <tr><th>Platform</th><th>Status</th><th>Commitments</th><th>Created</th><th>Bot</th></tr>
+  <tr><th>Platform</th><th>Meeting</th><th>Status</th><th>Commitments</th><th>Created</th><th>Bot</th></tr>
   {% for b in bots %}
   <tr>
     <td>{{ b.platform }}</td>
+    <td>{% if b.meeting_url.startswith("replay:") %}replay of fixtures/{{ b.meeting_url.rsplit("/", 1)[-1] }}{% else %}{{ b.meeting_url }}{% endif %}</td>
     <td>{{ b.status_text }}</td>
     <td>{{ b.commitment_count }}</td>
     <td class="muted">{{ b.created_at }}</td>

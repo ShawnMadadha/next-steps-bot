@@ -74,6 +74,8 @@ def test_confirmed_commitments_are_sent_automatically_and_the_rest_wait(tmp_path
 
         page = client.get("/bots/replay-1").text
         assert "sent automatically" in page
+        assert "replay of fixtures/call.json" in page and str(ROOT) not in page
+        assert "replay of fixtures/call.json" in client.get("/").text
         assert page.count("Approve and send") == len(rows) - 1
 
         # A rep approves one and dismisses another; both leave the queue and the page says who acted.

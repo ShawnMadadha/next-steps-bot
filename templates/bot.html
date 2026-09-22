@@ -24,7 +24,7 @@
 <body>
 <p><a href="/">All bots</a></p>
 <h1>{{ bot.platform }} call</h1>
-<p class="muted">{{ bot.meeting_url }}<br>Bot {{ bot.id }}, {% if bot.ended %}ended{% else %}live, this page refreshes every 3 seconds{% endif %}</p>
+<p class="muted">{% if bot.meeting_url.startswith("replay:") %}replay of fixtures/{{ bot.meeting_url.rsplit("/", 1)[-1] }}{% else %}{{ bot.meeting_url }}{% endif %}<br>Bot {{ bot.id }}, {% if bot.ended %}ended{% else %}live, this page refreshes every 3 seconds{% endif %}</p>
 
 <h2>Status</h2>
 {% if timeline %}
