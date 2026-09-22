@@ -1,11 +1,204 @@
 [
   {
     "participant": {
+      "id": 200,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "mVpTQ4V41sdeZ9rHXTkOrbl5OvBXTQersr9A_miRzWs="
+        }
+      },
+      "is_host": false,
+      "platform": "mobile_app",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "hey",
+        "start_timestamp": {
+          "relative": 95.1876,
+          "absolute": "2026-09-22T09:36:45.808Z"
+        },
+        "end_timestamp": {
+          "relative": 95.2676,
+          "absolute": "2026-09-22T09:36:45.888Z"
+        }
+      },
+      {
+        "text": "sean",
+        "start_timestamp": {
+          "relative": 95.347595,
+          "absolute": "2026-09-22T09:36:45.968Z"
+        },
+        "end_timestamp": {
+          "relative": 95.5876,
+          "absolute": "2026-09-22T09:36:46.208Z"
+        }
+      },
+      {
+        "text": "thanks",
+        "start_timestamp": {
+          "relative": 95.5876,
+          "absolute": "2026-09-22T09:36:46.208Z"
+        },
+        "end_timestamp": {
+          "relative": 95.667595,
+          "absolute": "2026-09-22T09:36:46.288Z"
+        }
+      },
+      {
+        "text": "for",
+        "start_timestamp": {
+          "relative": 95.667595,
+          "absolute": "2026-09-22T09:36:46.288Z"
+        },
+        "end_timestamp": {
+          "relative": 95.7476,
+          "absolute": "2026-09-22T09:36:46.368Z"
+        }
+      },
+      {
+        "text": "dropping",
+        "start_timestamp": {
+          "relative": 96.0676,
+          "absolute": "2026-09-22T09:36:46.688Z"
+        },
+        "end_timestamp": {
+          "relative": 96.2276,
+          "absolute": "2026-09-22T09:36:46.848Z"
+        }
+      },
+      {
+        "text": "on",
+        "start_timestamp": {
+          "relative": 96.3076,
+          "absolute": "2026-09-22T09:36:46.928Z"
+        },
+        "end_timestamp": {
+          "relative": 96.5476,
+          "absolute": "2026-09-22T09:36:47.168Z"
+        }
+      },
+      {
+        "text": "we",
+        "start_timestamp": {
+          "relative": 96.5476,
+          "absolute": "2026-09-22T09:36:47.168Z"
+        },
+        "end_timestamp": {
+          "relative": 96.5476,
+          "absolute": "2026-09-22T09:36:47.168Z"
+        }
+      },
+      {
+        "text": "only",
+        "start_timestamp": {
+          "relative": 96.5476,
+          "absolute": "2026-09-22T09:36:47.168Z"
+        },
+        "end_timestamp": {
+          "relative": 96.6276,
+          "absolute": "2026-09-22T09:36:47.248Z"
+        }
+      },
+      {
+        "text": "have",
+        "start_timestamp": {
+          "relative": 96.6276,
+          "absolute": "2026-09-22T09:36:47.248Z"
+        },
+        "end_timestamp": {
+          "relative": 96.707596,
+          "absolute": "2026-09-22T09:36:47.328Z"
+        }
+      },
+      {
+        "text": "about",
+        "start_timestamp": {
+          "relative": 96.707596,
+          "absolute": "2026-09-22T09:36:47.328Z"
+        },
+        "end_timestamp": {
+          "relative": 96.7876,
+          "absolute": "2026-09-22T09:36:47.408Z"
+        }
+      },
+      {
+        "text": "10",
+        "start_timestamp": {
+          "relative": 97.027596,
+          "absolute": "2026-09-22T09:36:47.648Z"
+        },
+        "end_timestamp": {
+          "relative": 97.1076,
+          "absolute": "2026-09-22T09:36:47.728Z"
+        }
+      },
+      {
+        "text": "minutes",
+        "start_timestamp": {
+          "relative": 97.1076,
+          "absolute": "2026-09-22T09:36:47.728Z"
+        },
+        "end_timestamp": {
+          "relative": 97.1876,
+          "absolute": "2026-09-22T09:36:47.808Z"
+        }
+      },
+      {
+        "text": "to",
+        "start_timestamp": {
+          "relative": 98.5476,
+          "absolute": "2026-09-22T09:36:49.168Z"
+        },
+        "end_timestamp": {
+          "relative": 98.6276,
+          "absolute": "2026-09-22T09:36:49.248Z"
+        }
+      },
+      {
+        "text": "really",
+        "start_timestamp": {
+          "relative": 98.8676,
+          "absolute": "2026-09-22T09:36:49.488Z"
+        },
+        "end_timestamp": {
+          "relative": 98.9476,
+          "absolute": "2026-09-22T09:36:49.568Z"
+        }
+      },
+      {
+        "text": "discuss",
+        "start_timestamp": {
+          "relative": 98.9476,
+          "absolute": "2026-09-22T09:36:49.568Z"
+        },
+        "end_timestamp": {
+          "relative": 99.027596,
+          "absolute": "2026-09-22T09:36:49.648Z"
+        }
+      },
+      {
+        "text": "this",
+        "start_timestamp": {
+          "relative": 99.8276,
+          "absolute": "2026-09-22T09:36:50.448Z"
+        },
+        "end_timestamp": {
+          "relative": 99.9076,
+          "absolute": "2026-09-22T09:36:50.528Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
       "id": 100,
       "name": "Shawn Madadha",
       "extra_data": {
         "google_meet": {
-          "static_participant_id": "SnZHhMqOT7fN5Y7A65EKZcBhH1X1O3Nw1HdwWDNSbH4="
+          "static_participant_id": "XumLxVyCdj1ywcWXP0XPSMVs8h27Z1mJCkXfBVK3KLs="
         }
       },
       "is_host": true,
@@ -14,916 +207,3057 @@
     },
     "words": [
       {
-        "text": "agreed",
+        "text": "yeah",
         "start_timestamp": {
-          "relative": 4.238484,
-          "absolute": "2026-09-22T06:58:48.795Z"
+          "relative": 106.15266,
+          "absolute": "2026-09-22T09:36:56.773Z"
         },
         "end_timestamp": {
-          "relative": 4.798484,
-          "absolute": "2026-09-22T06:58:49.355Z"
+          "relative": 106.39266,
+          "absolute": "2026-09-22T09:36:57.013Z"
         }
       },
       {
-        "text": "i'll",
+        "text": "no",
         "start_timestamp": {
-          "relative": 4.798484,
-          "absolute": "2026-09-22T06:58:49.355Z"
+          "relative": 106.39266,
+          "absolute": "2026-09-22T09:36:57.013Z"
         },
         "end_timestamp": {
-          "relative": 4.798484,
-          "absolute": "2026-09-22T06:58:49.355Z"
+          "relative": 106.39266,
+          "absolute": "2026-09-22T09:36:57.013Z"
         }
       },
       {
-        "text": "send",
+        "text": "problem",
         "start_timestamp": {
-          "relative": 4.878484,
-          "absolute": "2026-09-22T06:58:49.435Z"
+          "relative": 106.39266,
+          "absolute": "2026-09-22T09:36:57.013Z"
         },
         "end_timestamp": {
-          "relative": 4.9584837,
-          "absolute": "2026-09-22T06:58:49.515Z"
+          "relative": 106.87266,
+          "absolute": "2026-09-22T09:36:57.493Z"
         }
       },
       {
-        "text": "over",
+        "text": "last",
         "start_timestamp": {
-          "relative": 4.9584837,
-          "absolute": "2026-09-22T06:58:49.515Z"
+          "relative": 106.87266,
+          "absolute": "2026-09-22T09:36:57.493Z"
         },
         "end_timestamp": {
-          "relative": 5.0384836,
-          "absolute": "2026-09-22T06:58:49.595Z"
+          "relative": 106.95266,
+          "absolute": "2026-09-22T09:36:57.573Z"
         }
       },
       {
-        "text": "the",
+        "text": "time",
         "start_timestamp": {
-          "relative": 5.0384836,
-          "absolute": "2026-09-22T06:58:49.595Z"
+          "relative": 107.19266,
+          "absolute": "2026-09-22T09:36:57.813Z"
         },
         "end_timestamp": {
-          "relative": 5.118484,
-          "absolute": "2026-09-22T06:58:49.675Z"
-        }
-      },
-      {
-        "text": "docs",
-        "start_timestamp": {
-          "relative": 5.838484,
-          "absolute": "2026-09-22T06:58:50.395Z"
-        },
-        "end_timestamp": {
-          "relative": 5.9984837,
-          "absolute": "2026-09-22T06:58:50.555Z"
-        }
-      },
-      {
-        "text": "in",
-        "start_timestamp": {
-          "relative": 7.598484,
-          "absolute": "2026-09-22T06:58:52.155Z"
-        },
-        "end_timestamp": {
-          "relative": 7.678484,
-          "absolute": "2026-09-22T06:58:52.235Z"
-        }
-      },
-      {
-        "text": "about",
-        "start_timestamp": {
-          "relative": 7.758484,
-          "absolute": "2026-09-22T06:58:52.315Z"
-        },
-        "end_timestamp": {
-          "relative": 7.838484,
-          "absolute": "2026-09-22T06:58:52.395Z"
-        }
-      },
-      {
-        "text": "20",
-        "start_timestamp": {
-          "relative": 11.518484,
-          "absolute": "2026-09-22T06:58:56.075Z"
-        },
-        "end_timestamp": {
-          "relative": 11.598484,
-          "absolute": "2026-09-22T06:58:56.155Z"
-        }
-      },
-      {
-        "text": "minutes",
-        "start_timestamp": {
-          "relative": 11.678484,
-          "absolute": "2026-09-22T06:58:56.235Z"
-        },
-        "end_timestamp": {
-          "relative": 11.758484,
-          "absolute": "2026-09-22T06:58:56.315Z"
-        }
-      },
-      {
-        "text": "after",
-        "start_timestamp": {
-          "relative": 12.238484,
-          "absolute": "2026-09-22T06:58:56.795Z"
-        },
-        "end_timestamp": {
-          "relative": 12.318484,
-          "absolute": "2026-09-22T06:58:56.875Z"
-        }
-      },
-      {
-        "text": "this",
-        "start_timestamp": {
-          "relative": 12.478484,
-          "absolute": "2026-09-22T06:58:57.035Z"
-        },
-        "end_timestamp": {
-          "relative": 12.558484,
-          "absolute": "2026-09-22T06:58:57.115Z"
-        }
-      },
-      {
-        "text": "call",
-        "start_timestamp": {
-          "relative": 12.638484,
-          "absolute": "2026-09-22T06:58:57.195Z"
-        },
-        "end_timestamp": {
-          "relative": 12.718484,
-          "absolute": "2026-09-22T06:58:57.275Z"
-        }
-      },
-      {
-        "text": "and",
-        "start_timestamp": {
-          "relative": 26.718483,
-          "absolute": "2026-09-22T06:59:11.275Z"
-        },
-        "end_timestamp": {
-          "relative": 26.798483,
-          "absolute": "2026-09-22T06:59:11.355Z"
-        }
-      },
-      {
-        "text": "then",
-        "start_timestamp": {
-          "relative": 26.798483,
-          "absolute": "2026-09-22T06:59:11.355Z"
-        },
-        "end_timestamp": {
-          "relative": 26.798483,
-          "absolute": "2026-09-22T06:59:11.355Z"
-        }
-      },
-      {
-        "text": "you'll",
-        "start_timestamp": {
-          "relative": 27.278482,
-          "absolute": "2026-09-22T06:59:11.835Z"
-        },
-        "end_timestamp": {
-          "relative": 27.358482,
-          "absolute": "2026-09-22T06:59:11.915Z"
-        }
-      },
-      {
-        "text": "go",
-        "start_timestamp": {
-          "relative": 27.598484,
-          "absolute": "2026-09-22T06:59:12.155Z"
-        },
-        "end_timestamp": {
-          "relative": 27.678484,
-          "absolute": "2026-09-22T06:59:12.235Z"
-        }
-      },
-      {
-        "text": "forward",
-        "start_timestamp": {
-          "relative": 27.838484,
-          "absolute": "2026-09-22T06:59:12.395Z"
-        },
-        "end_timestamp": {
-          "relative": 27.918484,
-          "absolute": "2026-09-22T06:59:12.475Z"
-        }
-      },
-      {
-        "text": "from",
-        "start_timestamp": {
-          "relative": 27.998484,
-          "absolute": "2026-09-22T06:59:12.555Z"
-        },
-        "end_timestamp": {
-          "relative": 28.078484,
-          "absolute": "2026-09-22T06:59:12.635Z"
-        }
-      },
-      {
-        "text": "there",
-        "start_timestamp": {
-          "relative": 28.158484,
-          "absolute": "2026-09-22T06:59:12.715Z"
-        },
-        "end_timestamp": {
-          "relative": 28.238483,
-          "absolute": "2026-09-22T06:59:12.795Z"
-        }
-      },
-      {
-        "text": "great",
-        "start_timestamp": {
-          "relative": 696.17725,
-          "absolute": "2026-09-22T07:10:20.734Z"
-        },
-        "end_timestamp": {
-          "relative": 696.25726,
-          "absolute": "2026-09-22T07:10:20.814Z"
-        }
-      },
-      {
-        "text": "so",
-        "start_timestamp": {
-          "relative": 697.2173,
-          "absolute": "2026-09-22T07:10:21.774Z"
-        },
-        "end_timestamp": {
-          "relative": 697.29724,
-          "absolute": "2026-09-22T07:10:21.854Z"
-        }
-      },
-      {
-        "text": "next",
-        "start_timestamp": {
-          "relative": 697.61725,
-          "absolute": "2026-09-22T07:10:22.174Z"
-        },
-        "end_timestamp": {
-          "relative": 697.69727,
-          "absolute": "2026-09-22T07:10:22.254Z"
-        }
-      },
-      {
-        "text": "steps",
-        "start_timestamp": {
-          "relative": 697.69727,
-          "absolute": "2026-09-22T07:10:22.254Z"
-        },
-        "end_timestamp": {
-          "relative": 697.85724,
-          "absolute": "2026-09-22T07:10:22.414Z"
-        }
-      },
-      {
-        "text": "would",
-        "start_timestamp": {
-          "relative": 697.85724,
-          "absolute": "2026-09-22T07:10:22.414Z"
-        },
-        "end_timestamp": {
-          "relative": 697.93726,
-          "absolute": "2026-09-22T07:10:22.494Z"
-        }
-      },
-      {
-        "text": "be",
-        "start_timestamp": {
-          "relative": 697.93726,
-          "absolute": "2026-09-22T07:10:22.494Z"
-        },
-        "end_timestamp": {
-          "relative": 697.93726,
-          "absolute": "2026-09-22T07:10:22.494Z"
-        }
-      },
-      {
-        "text": "getting",
-        "start_timestamp": {
-          "relative": 699.2173,
-          "absolute": "2026-09-22T07:10:23.774Z"
-        },
-        "end_timestamp": {
-          "relative": 699.29724,
-          "absolute": "2026-09-22T07:10:23.854Z"
-        }
-      },
-      {
-        "text": "this",
-        "start_timestamp": {
-          "relative": 700.25726,
-          "absolute": "2026-09-22T07:10:24.814Z"
-        },
-        "end_timestamp": {
-          "relative": 700.3373,
-          "absolute": "2026-09-22T07:10:24.894Z"
-        }
-      },
-      {
-        "text": "document",
-        "start_timestamp": {
-          "relative": 700.73724,
-          "absolute": "2026-09-22T07:10:25.294Z"
-        },
-        "end_timestamp": {
-          "relative": 700.81726,
-          "absolute": "2026-09-22T07:10:25.374Z"
-        }
-      },
-      {
-        "text": "sent",
-        "start_timestamp": {
-          "relative": 700.9773,
-          "absolute": "2026-09-22T07:10:25.534Z"
-        },
-        "end_timestamp": {
-          "relative": 701.05725,
-          "absolute": "2026-09-22T07:10:25.614Z"
-        }
-      },
-      {
-        "text": "out",
-        "start_timestamp": {
-          "relative": 701.13727,
-          "absolute": "2026-09-22T07:10:25.694Z"
-        },
-        "end_timestamp": {
-          "relative": 701.2173,
-          "absolute": "2026-09-22T07:10:25.774Z"
-        }
-      },
-      {
-        "text": "and",
-        "start_timestamp": {
-          "relative": 704.0973,
-          "absolute": "2026-09-22T07:10:28.654Z"
-        },
-        "end_timestamp": {
-          "relative": 704.17725,
-          "absolute": "2026-09-22T07:10:28.734Z"
-        }
-      },
-      {
-        "text": "i",
-        "start_timestamp": {
-          "relative": 704.17725,
-          "absolute": "2026-09-22T07:10:28.734Z"
-        },
-        "end_timestamp": {
-          "relative": 704.17725,
-          "absolute": "2026-09-22T07:10:28.734Z"
-        }
-      },
-      {
-        "text": "should",
-        "start_timestamp": {
-          "relative": 704.17725,
-          "absolute": "2026-09-22T07:10:28.734Z"
-        },
-        "end_timestamp": {
-          "relative": 704.17725,
-          "absolute": "2026-09-22T07:10:28.734Z"
-        }
-      },
-      {
-        "text": "have",
-        "start_timestamp": {
-          "relative": 704.25726,
-          "absolute": "2026-09-22T07:10:28.814Z"
-        },
-        "end_timestamp": {
-          "relative": 704.3373,
-          "absolute": "2026-09-22T07:10:28.894Z"
-        }
-      },
-      {
-        "text": "it",
-        "start_timestamp": {
-          "relative": 704.5773,
-          "absolute": "2026-09-22T07:10:29.134Z"
-        },
-        "end_timestamp": {
-          "relative": 704.6573,
-          "absolute": "2026-09-22T07:10:29.214Z"
-        }
-      },
-      {
-        "text": "done",
-        "start_timestamp": {
-          "relative": 704.6573,
-          "absolute": "2026-09-22T07:10:29.214Z"
-        },
-        "end_timestamp": {
-          "relative": 704.73724,
-          "absolute": "2026-09-22T07:10:29.294Z"
-        }
-      },
-      {
-        "text": "after",
-        "start_timestamp": {
-          "relative": 704.8973,
-          "absolute": "2026-09-22T07:10:29.454Z"
-        },
-        "end_timestamp": {
-          "relative": 704.9773,
-          "absolute": "2026-09-22T07:10:29.534Z"
-        }
-      },
-      {
-        "text": "20",
-        "start_timestamp": {
-          "relative": 706.0173,
-          "absolute": "2026-09-22T07:10:30.574Z"
-        },
-        "end_timestamp": {
-          "relative": 706.0973,
-          "absolute": "2026-09-22T07:10:30.654Z"
-        }
-      },
-      {
-        "text": "minutes",
-        "start_timestamp": {
-          "relative": 706.17725,
-          "absolute": "2026-09-22T07:10:30.734Z"
-        },
-        "end_timestamp": {
-          "relative": 706.25726,
-          "absolute": "2026-09-22T07:10:30.814Z"
-        }
-      },
-      {
-        "text": "after",
-        "start_timestamp": {
-          "relative": 706.5773,
-          "absolute": "2026-09-22T07:10:31.134Z"
-        },
-        "end_timestamp": {
-          "relative": 706.6573,
-          "absolute": "2026-09-22T07:10:31.214Z"
+          "relative": 107.27266,
+          "absolute": "2026-09-22T09:36:57.893Z"
         }
       },
       {
         "text": "we",
         "start_timestamp": {
-          "relative": 707.13727,
-          "absolute": "2026-09-22T07:10:31.694Z"
+          "relative": 107.27266,
+          "absolute": "2026-09-22T09:36:57.893Z"
         },
         "end_timestamp": {
-          "relative": 707.2173,
-          "absolute": "2026-09-22T07:10:31.774Z"
+          "relative": 107.35266,
+          "absolute": "2026-09-22T09:36:57.973Z"
         }
       },
       {
-        "text": "get",
+        "text": "talked",
         "start_timestamp": {
-          "relative": 707.37726,
-          "absolute": "2026-09-22T07:10:31.934Z"
+          "relative": 107.35266,
+          "absolute": "2026-09-22T09:36:57.973Z"
         },
         "end_timestamp": {
-          "relative": 707.4573,
-          "absolute": "2026-09-22T07:10:32.014Z"
+          "relative": 107.432655,
+          "absolute": "2026-09-22T09:36:58.053Z"
         }
       },
       {
-        "text": "off",
+        "text": "about",
         "start_timestamp": {
-          "relative": 707.4573,
-          "absolute": "2026-09-22T07:10:32.014Z"
+          "relative": 107.432655,
+          "absolute": "2026-09-22T09:36:58.053Z"
         },
         "end_timestamp": {
-          "relative": 707.5373,
-          "absolute": "2026-09-22T07:10:32.094Z"
+          "relative": 107.432655,
+          "absolute": "2026-09-22T09:36:58.053Z"
+        }
+      },
+      {
+        "text": "pricing",
+        "start_timestamp": {
+          "relative": 107.752655,
+          "absolute": "2026-09-22T09:36:58.373Z"
+        },
+        "end_timestamp": {
+          "relative": 107.83266,
+          "absolute": "2026-09-22T09:36:58.453Z"
         }
       },
       {
         "text": "and",
         "start_timestamp": {
-          "relative": 709.4573,
-          "absolute": "2026-09-22T07:10:34.014Z"
+          "relative": 108.55266,
+          "absolute": "2026-09-22T09:36:59.173Z"
         },
         "end_timestamp": {
-          "relative": 709.5373,
-          "absolute": "2026-09-22T07:10:34.094Z"
+          "relative": 108.63266,
+          "absolute": "2026-09-22T09:36:59.253Z"
         }
       },
       {
-        "text": "yeah",
+        "text": "you",
         "start_timestamp": {
-          "relative": 709.5373,
-          "absolute": "2026-09-22T07:10:34.094Z"
+          "relative": 108.63266,
+          "absolute": "2026-09-22T09:36:59.253Z"
         },
         "end_timestamp": {
-          "relative": 709.7773,
-          "absolute": "2026-09-22T07:10:34.334Z"
+          "relative": 108.63266,
+          "absolute": "2026-09-22T09:36:59.253Z"
         }
       },
       {
-        "text": "i",
+        "text": "were",
         "start_timestamp": {
-          "relative": 709.7773,
-          "absolute": "2026-09-22T07:10:34.334Z"
+          "relative": 108.63266,
+          "absolute": "2026-09-22T09:36:59.253Z"
         },
         "end_timestamp": {
-          "relative": 709.7773,
-          "absolute": "2026-09-22T07:10:34.334Z"
+          "relative": 108.71266,
+          "absolute": "2026-09-22T09:36:59.333Z"
         }
       },
       {
-        "text": "think",
+        "text": "going",
         "start_timestamp": {
-          "relative": 709.7773,
-          "absolute": "2026-09-22T07:10:34.334Z"
+          "relative": 108.87266,
+          "absolute": "2026-09-22T09:36:59.493Z"
         },
         "end_timestamp": {
-          "relative": 709.7773,
-          "absolute": "2026-09-22T07:10:34.334Z"
+          "relative": 108.95266,
+          "absolute": "2026-09-22T09:36:59.573Z"
         }
       },
       {
-        "text": "that's",
+        "text": "to",
         "start_timestamp": {
-          "relative": 709.7773,
-          "absolute": "2026-09-22T07:10:34.334Z"
+          "relative": 108.95266,
+          "absolute": "2026-09-22T09:36:59.573Z"
         },
         "end_timestamp": {
-          "relative": 710.25726,
-          "absolute": "2026-09-22T07:10:34.814Z"
+          "relative": 109.03266,
+          "absolute": "2026-09-22T09:36:59.653Z"
         }
       },
       {
-        "text": "next",
+        "text": "run",
         "start_timestamp": {
-          "relative": 710.5773,
-          "absolute": "2026-09-22T07:10:35.134Z"
+          "relative": 109.03266,
+          "absolute": "2026-09-22T09:36:59.653Z"
         },
         "end_timestamp": {
-          "relative": 710.6573,
-          "absolute": "2026-09-22T07:10:35.214Z"
-        }
-      },
-      {
-        "text": "steps",
-        "start_timestamp": {
-          "relative": 710.6573,
-          "absolute": "2026-09-22T07:10:35.214Z"
-        },
-        "end_timestamp": {
-          "relative": 710.8973,
-          "absolute": "2026-09-22T07:10:35.454Z"
-        }
-      },
-      {
-        "text": "for",
-        "start_timestamp": {
-          "relative": 710.9773,
-          "absolute": "2026-09-22T07:10:35.534Z"
-        },
-        "end_timestamp": {
-          "relative": 711.05725,
-          "absolute": "2026-09-22T07:10:35.614Z"
-        }
-      },
-      {
-        "text": "now",
-        "start_timestamp": {
-          "relative": 711.13727,
-          "absolute": "2026-09-22T07:10:35.694Z"
-        },
-        "end_timestamp": {
-          "relative": 711.2173,
-          "absolute": "2026-09-22T07:10:35.774Z"
-        }
-      },
-      {
-        "text": "yeah",
-        "start_timestamp": {
-          "relative": 734.6573,
-          "absolute": "2026-09-22T07:10:59.214Z"
-        },
-        "end_timestamp": {
-          "relative": 735.2173,
-          "absolute": "2026-09-22T07:10:59.774Z"
-        }
-      },
-      {
-        "text": "i'll",
-        "start_timestamp": {
-          "relative": 735.2173,
-          "absolute": "2026-09-22T07:10:59.774Z"
-        },
-        "end_timestamp": {
-          "relative": 735.2173,
-          "absolute": "2026-09-22T07:10:59.774Z"
-        }
-      },
-      {
-        "text": "get",
-        "start_timestamp": {
-          "relative": 735.4573,
-          "absolute": "2026-09-22T07:11:00.014Z"
-        },
-        "end_timestamp": {
-          "relative": 735.5373,
-          "absolute": "2026-09-22T07:11:00.094Z"
+          "relative": 109.112656,
+          "absolute": "2026-09-22T09:36:59.733Z"
         }
       },
       {
         "text": "it",
         "start_timestamp": {
-          "relative": 735.61725,
-          "absolute": "2026-09-22T07:11:00.174Z"
+          "relative": 109.35266,
+          "absolute": "2026-09-22T09:36:59.973Z"
         },
         "end_timestamp": {
-          "relative": 735.69727,
-          "absolute": "2026-09-22T07:11:00.254Z"
-        }
-      },
-      {
-        "text": "sent",
-        "start_timestamp": {
-          "relative": 735.7773,
-          "absolute": "2026-09-22T07:11:00.334Z"
-        },
-        "end_timestamp": {
-          "relative": 735.8573,
-          "absolute": "2026-09-22T07:11:00.414Z"
+          "relative": 109.432655,
+          "absolute": "2026-09-22T09:37:00.053Z"
         }
       },
       {
         "text": "by",
         "start_timestamp": {
-          "relative": 736.25726,
-          "absolute": "2026-09-22T07:11:00.814Z"
+          "relative": 109.432655,
+          "absolute": "2026-09-22T09:37:00.053Z"
         },
         "end_timestamp": {
-          "relative": 736.3373,
-          "absolute": "2026-09-22T07:11:00.894Z"
+          "relative": 109.51266,
+          "absolute": "2026-09-22T09:37:00.133Z"
         }
       },
       {
-        "text": "tomorrow",
+        "text": "your",
         "start_timestamp": {
-          "relative": 736.41724,
-          "absolute": "2026-09-22T07:11:00.974Z"
+          "relative": 109.59266,
+          "absolute": "2026-09-22T09:37:00.213Z"
         },
         "end_timestamp": {
-          "relative": 736.49725,
-          "absolute": "2026-09-22T07:11:01.054Z"
+          "relative": 109.67266,
+          "absolute": "2026-09-22T09:37:00.293Z"
         }
       },
       {
-        "text": "and",
+        "text": "team",
         "start_timestamp": {
-          "relative": 746.8973,
-          "absolute": "2026-09-22T07:11:11.454Z"
+          "relative": 109.67266,
+          "absolute": "2026-09-22T09:37:00.293Z"
         },
         "end_timestamp": {
-          "relative": 746.9773,
-          "absolute": "2026-09-22T07:11:11.534Z"
+          "relative": 110.31266,
+          "absolute": "2026-09-22T09:37:00.933Z"
+        }
+      },
+      {
+        "text": "where",
+        "start_timestamp": {
+          "relative": 110.31266,
+          "absolute": "2026-09-22T09:37:00.933Z"
+        },
+        "end_timestamp": {
+          "relative": 110.31266,
+          "absolute": "2026-09-22T09:37:00.933Z"
+        }
+      },
+      {
+        "text": "did",
+        "start_timestamp": {
+          "relative": 110.392654,
+          "absolute": "2026-09-22T09:37:01.013Z"
+        },
+        "end_timestamp": {
+          "relative": 110.47266,
+          "absolute": "2026-09-22T09:37:01.093Z"
+        }
+      },
+      {
+        "text": "that",
+        "start_timestamp": {
+          "relative": 110.47266,
+          "absolute": "2026-09-22T09:37:01.093Z"
+        },
+        "end_timestamp": {
+          "relative": 110.55266,
+          "absolute": "2026-09-22T09:37:01.173Z"
+        }
+      },
+      {
+        "text": "land",
+        "start_timestamp": {
+          "relative": 110.55266,
+          "absolute": "2026-09-22T09:37:01.173Z"
+        },
+        "end_timestamp": {
+          "relative": 110.95266,
+          "absolute": "2026-09-22T09:37:01.573Z"
         }
       },
       {
         "text": "by",
         "start_timestamp": {
-          "relative": 746.9773,
-          "absolute": "2026-09-22T07:11:11.534Z"
+          "relative": 110.95266,
+          "absolute": "2026-09-22T09:37:01.573Z"
         },
         "end_timestamp": {
-          "relative": 747.05725,
-          "absolute": "2026-09-22T07:11:11.614Z"
+          "relative": 110.95266,
+          "absolute": "2026-09-22T09:37:01.573Z"
         }
       },
       {
-        "text": "then",
+        "text": "the",
         "start_timestamp": {
-          "relative": 747.13727,
-          "absolute": "2026-09-22T07:11:11.694Z"
+          "relative": 110.95266,
+          "absolute": "2026-09-22T09:37:01.573Z"
         },
         "end_timestamp": {
-          "relative": 747.2173,
-          "absolute": "2026-09-22T07:11:11.774Z"
+          "relative": 111.03266,
+          "absolute": "2026-09-22T09:37:01.653Z"
         }
       },
       {
-        "text": "i",
+        "text": "way",
         "start_timestamp": {
-          "relative": 748.0173,
-          "absolute": "2026-09-22T07:11:12.574Z"
+          "relative": 111.03266,
+          "absolute": "2026-09-22T09:37:01.653Z"
         },
         "end_timestamp": {
-          "relative": 748.0973,
-          "absolute": "2026-09-22T07:11:12.654Z"
+          "relative": 111.03266,
+          "absolute": "2026-09-22T09:37:01.653Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 200,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "mVpTQ4V41sdeZ9rHXTkOrbl5OvBXTQersr9A_miRzWs="
+        }
+      },
+      "is_host": false,
+      "platform": "mobile_app",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "yeah",
+        "start_timestamp": {
+          "relative": 115.908394,
+          "absolute": "2026-09-22T09:37:06.529Z"
+        },
+        "end_timestamp": {
+          "relative": 115.988396,
+          "absolute": "2026-09-22T09:37:06.609Z"
         }
       },
       {
-        "text": "should",
+        "text": "teams",
         "start_timestamp": {
-          "relative": 748.0973,
-          "absolute": "2026-09-22T07:11:12.654Z"
+          "relative": 118.0684,
+          "absolute": "2026-09-22T09:37:08.689Z"
         },
         "end_timestamp": {
-          "relative": 748.0973,
-          "absolute": "2026-09-22T07:11:12.654Z"
-        }
-      },
-      {
-        "text": "have",
-        "start_timestamp": {
-          "relative": 748.0973,
-          "absolute": "2026-09-22T07:11:12.654Z"
-        },
-        "end_timestamp": {
-          "relative": 748.17725,
-          "absolute": "2026-09-22T07:11:12.734Z"
-        }
-      },
-      {
-        "text": "my",
-        "start_timestamp": {
-          "relative": 748.25726,
-          "absolute": "2026-09-22T07:11:12.814Z"
-        },
-        "end_timestamp": {
-          "relative": 748.3373,
-          "absolute": "2026-09-22T07:11:12.894Z"
-        }
-      },
-      {
-        "text": "portion",
-        "start_timestamp": {
-          "relative": 748.73724,
-          "absolute": "2026-09-22T07:11:13.294Z"
-        },
-        "end_timestamp": {
-          "relative": 749.05725,
-          "absolute": "2026-09-22T07:11:13.614Z"
-        }
-      },
-      {
-        "text": "signed",
-        "start_timestamp": {
-          "relative": 749.2173,
-          "absolute": "2026-09-22T07:11:13.774Z"
-        },
-        "end_timestamp": {
-          "relative": 749.4573,
-          "absolute": "2026-09-22T07:11:14.014Z"
+          "relative": 118.22839,
+          "absolute": "2026-09-22T09:37:08.849Z"
         }
       },
       {
         "text": "on",
         "start_timestamp": {
-          "relative": 749.61725,
-          "absolute": "2026-09-22T07:11:14.174Z"
+          "relative": 118.22839,
+          "absolute": "2026-09-22T09:37:08.849Z"
         },
         "end_timestamp": {
-          "relative": 749.69727,
-          "absolute": "2026-09-22T07:11:14.254Z"
+          "relative": 118.308395,
+          "absolute": "2026-09-22T09:37:08.929Z"
+        }
+      },
+      {
+        "text": "board",
+        "start_timestamp": {
+          "relative": 118.308395,
+          "absolute": "2026-09-22T09:37:08.929Z"
+        },
+        "end_timestamp": {
+          "relative": 119.0284,
+          "absolute": "2026-09-22T09:37:09.649Z"
         }
       },
       {
         "text": "the",
         "start_timestamp": {
-          "relative": 749.69727,
-          "absolute": "2026-09-22T07:11:14.254Z"
+          "relative": 119.0284,
+          "absolute": "2026-09-22T09:37:09.649Z"
         },
         "end_timestamp": {
-          "relative": 749.69727,
-          "absolute": "2026-09-22T07:11:14.254Z"
+          "relative": 119.0284,
+          "absolute": "2026-09-22T09:37:09.649Z"
         }
       },
       {
-        "text": "document",
+        "text": "holdup",
         "start_timestamp": {
-          "relative": 749.7773,
-          "absolute": "2026-09-22T07:11:14.334Z"
+          "relative": 119.0284,
+          "absolute": "2026-09-22T09:37:09.649Z"
         },
         "end_timestamp": {
-          "relative": 749.8573,
-          "absolute": "2026-09-22T07:11:14.414Z"
+          "relative": 119.1884,
+          "absolute": "2026-09-22T09:37:09.809Z"
         }
       },
       {
-        "text": "i",
+        "text": "is",
         "start_timestamp": {
-          "relative": 756.81726,
-          "absolute": "2026-09-22T07:11:21.374Z"
+          "relative": 119.268394,
+          "absolute": "2026-09-22T09:37:09.889Z"
         },
         "end_timestamp": {
-          "relative": 756.8973,
-          "absolute": "2026-09-22T07:11:21.454Z"
+          "relative": 119.3484,
+          "absolute": "2026-09-22T09:37:09.969Z"
+        }
+      },
+      {
+        "text": "legal",
+        "start_timestamp": {
+          "relative": 119.5084,
+          "absolute": "2026-09-22T09:37:10.129Z"
+        },
+        "end_timestamp": {
+          "relative": 120.308395,
+          "absolute": "2026-09-22T09:37:10.929Z"
+        }
+      },
+      {
+        "text": "they",
+        "start_timestamp": {
+          "relative": 120.308395,
+          "absolute": "2026-09-22T09:37:10.929Z"
+        },
+        "end_timestamp": {
+          "relative": 120.308395,
+          "absolute": "2026-09-22T09:37:10.929Z"
+        }
+      },
+      {
+        "text": "want",
+        "start_timestamp": {
+          "relative": 120.3884,
+          "absolute": "2026-09-22T09:37:11.009Z"
+        },
+        "end_timestamp": {
+          "relative": 120.4684,
+          "absolute": "2026-09-22T09:37:11.089Z"
+        }
+      },
+      {
+        "text": "to",
+        "start_timestamp": {
+          "relative": 120.4684,
+          "absolute": "2026-09-22T09:37:11.089Z"
+        },
+        "end_timestamp": {
+          "relative": 120.4684,
+          "absolute": "2026-09-22T09:37:11.089Z"
+        }
+      },
+      {
+        "text": "see",
+        "start_timestamp": {
+          "relative": 120.4684,
+          "absolute": "2026-09-22T09:37:11.089Z"
+        },
+        "end_timestamp": {
+          "relative": 120.54839,
+          "absolute": "2026-09-22T09:37:11.169Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 120.7084,
+          "absolute": "2026-09-22T09:37:11.329Z"
+        },
+        "end_timestamp": {
+          "relative": 120.7884,
+          "absolute": "2026-09-22T09:37:11.409Z"
+        }
+      },
+      {
+        "text": "red",
+        "start_timestamp": {
+          "relative": 120.948395,
+          "absolute": "2026-09-22T09:37:11.569Z"
+        },
+        "end_timestamp": {
+          "relative": 121.0284,
+          "absolute": "2026-09-22T09:37:11.649Z"
+        }
+      },
+      {
+        "text": "line",
+        "start_timestamp": {
+          "relative": 121.1084,
+          "absolute": "2026-09-22T09:37:11.729Z"
+        },
+        "end_timestamp": {
+          "relative": 121.1884,
+          "absolute": "2026-09-22T09:37:11.809Z"
+        }
+      },
+      {
+        "text": "msa",
+        "start_timestamp": {
+          "relative": 121.4284,
+          "absolute": "2026-09-22T09:37:12.049Z"
+        },
+        "end_timestamp": {
+          "relative": 121.668396,
+          "absolute": "2026-09-22T09:37:12.289Z"
+        }
+      },
+      {
+        "text": "before",
+        "start_timestamp": {
+          "relative": 121.7484,
+          "absolute": "2026-09-22T09:37:12.369Z"
+        },
+        "end_timestamp": {
+          "relative": 121.8284,
+          "absolute": "2026-09-22T09:37:12.449Z"
+        }
+      },
+      {
+        "text": "we",
+        "start_timestamp": {
+          "relative": 121.8284,
+          "absolute": "2026-09-22T09:37:12.449Z"
+        },
+        "end_timestamp": {
+          "relative": 121.908394,
+          "absolute": "2026-09-22T09:37:12.529Z"
+        }
+      },
+      {
+        "text": "go",
+        "start_timestamp": {
+          "relative": 121.908394,
+          "absolute": "2026-09-22T09:37:12.529Z"
+        },
+        "end_timestamp": {
+          "relative": 121.908394,
+          "absolute": "2026-09-22T09:37:12.529Z"
+        }
+      },
+      {
+        "text": "further",
+        "start_timestamp": {
+          "relative": 121.988396,
+          "absolute": "2026-09-22T09:37:12.609Z"
+        },
+        "end_timestamp": {
+          "relative": 122.0684,
+          "absolute": "2026-09-22T09:37:12.689Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 100,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "XumLxVyCdj1ywcWXP0XPSMVs8h27Z1mJCkXfBVK3KLs="
+        }
+      },
+      "is_host": true,
+      "platform": "desktop",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "yeah",
+        "start_timestamp": {
+          "relative": 126.43165,
+          "absolute": "2026-09-22T09:37:17.052Z"
+        },
+        "end_timestamp": {
+          "relative": 126.59165,
+          "absolute": "2026-09-22T09:37:17.212Z"
+        }
+      },
+      {
+        "text": "got",
+        "start_timestamp": {
+          "relative": 126.67165,
+          "absolute": "2026-09-22T09:37:17.292Z"
+        },
+        "end_timestamp": {
+          "relative": 126.75165,
+          "absolute": "2026-09-22T09:37:17.372Z"
+        }
+      },
+      {
+        "text": "it",
+        "start_timestamp": {
+          "relative": 126.75165,
+          "absolute": "2026-09-22T09:37:17.372Z"
+        },
+        "end_timestamp": {
+          "relative": 127.55165,
+          "absolute": "2026-09-22T09:37:18.172Z"
+        }
+      },
+      {
+        "text": "i'll",
+        "start_timestamp": {
+          "relative": 127.55165,
+          "absolute": "2026-09-22T09:37:18.172Z"
+        },
+        "end_timestamp": {
+          "relative": 127.55165,
+          "absolute": "2026-09-22T09:37:18.172Z"
+        }
+      },
+      {
+        "text": "send",
+        "start_timestamp": {
+          "relative": 127.711655,
+          "absolute": "2026-09-22T09:37:18.332Z"
+        },
+        "end_timestamp": {
+          "relative": 127.79165,
+          "absolute": "2026-09-22T09:37:18.412Z"
+        }
+      },
+      {
+        "text": "a",
+        "start_timestamp": {
+          "relative": 127.87165,
+          "absolute": "2026-09-22T09:37:18.492Z"
+        },
+        "end_timestamp": {
+          "relative": 127.95165,
+          "absolute": "2026-09-22T09:37:18.572Z"
+        }
+      },
+      {
+        "text": "red",
+        "start_timestamp": {
+          "relative": 128.11165,
+          "absolute": "2026-09-22T09:37:18.732Z"
+        },
+        "end_timestamp": {
+          "relative": 128.19165,
+          "absolute": "2026-09-22T09:37:18.812Z"
+        }
+      },
+      {
+        "text": "line",
+        "start_timestamp": {
+          "relative": 128.35165,
+          "absolute": "2026-09-22T09:37:18.972Z"
+        },
+        "end_timestamp": {
+          "relative": 128.43166,
+          "absolute": "2026-09-22T09:37:19.052Z"
+        }
+      },
+      {
+        "text": "msi",
+        "start_timestamp": {
+          "relative": 128.91165,
+          "absolute": "2026-09-22T09:37:19.532Z"
+        },
+        "end_timestamp": {
+          "relative": 129.23164,
+          "absolute": "2026-09-22T09:37:19.852Z"
+        }
+      },
+      {
+        "text": "to",
+        "start_timestamp": {
+          "relative": 129.31165,
+          "absolute": "2026-09-22T09:37:19.932Z"
+        },
+        "end_timestamp": {
+          "relative": 129.39165,
+          "absolute": "2026-09-22T09:37:20.012Z"
+        }
+      },
+      {
+        "text": "your",
+        "start_timestamp": {
+          "relative": 129.39165,
+          "absolute": "2026-09-22T09:37:20.012Z"
+        },
+        "end_timestamp": {
+          "relative": 129.47165,
+          "absolute": "2026-09-22T09:37:20.092Z"
+        }
+      },
+      {
+        "text": "legal",
+        "start_timestamp": {
+          "relative": 129.55165,
+          "absolute": "2026-09-22T09:37:20.172Z"
+        },
+        "end_timestamp": {
+          "relative": 129.71165,
+          "absolute": "2026-09-22T09:37:20.332Z"
+        }
+      },
+      {
+        "text": "team",
+        "start_timestamp": {
+          "relative": 129.71165,
+          "absolute": "2026-09-22T09:37:20.332Z"
+        },
+        "end_timestamp": {
+          "relative": 129.79166,
+          "absolute": "2026-09-22T09:37:20.412Z"
+        }
+      },
+      {
+        "text": "by",
+        "start_timestamp": {
+          "relative": 129.95164,
+          "absolute": "2026-09-22T09:37:20.572Z"
+        },
+        "end_timestamp": {
+          "relative": 130.03165,
+          "absolute": "2026-09-22T09:37:20.652Z"
+        }
+      },
+      {
+        "text": "thursday",
+        "start_timestamp": {
+          "relative": 130.03165,
+          "absolute": "2026-09-22T09:37:20.652Z"
+        },
+        "end_timestamp": {
+          "relative": 130.11165,
+          "absolute": "2026-09-22T09:37:20.732Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 200,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "mVpTQ4V41sdeZ9rHXTkOrbl5OvBXTQersr9A_miRzWs="
+        }
+      },
+      "is_host": false,
+      "platform": "mobile_app",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "yeah",
+        "start_timestamp": {
+          "relative": 133.15335,
+          "absolute": "2026-09-22T09:37:23.774Z"
+        },
+        "end_timestamp": {
+          "relative": 133.47334,
+          "absolute": "2026-09-22T09:37:24.094Z"
+        }
+      },
+      {
+        "text": "that",
+        "start_timestamp": {
+          "relative": 133.47334,
+          "absolute": "2026-09-22T09:37:24.094Z"
+        },
+        "end_timestamp": {
+          "relative": 133.47334,
+          "absolute": "2026-09-22T09:37:24.094Z"
+        }
+      },
+      {
+        "text": "works",
+        "start_timestamp": {
+          "relative": 133.55334,
+          "absolute": "2026-09-22T09:37:24.174Z"
+        },
+        "end_timestamp": {
+          "relative": 134.67336,
+          "absolute": "2026-09-22T09:37:25.294Z"
+        }
+      },
+      {
+        "text": "one",
+        "start_timestamp": {
+          "relative": 134.67336,
+          "absolute": "2026-09-22T09:37:25.294Z"
+        },
+        "end_timestamp": {
+          "relative": 134.67336,
+          "absolute": "2026-09-22T09:37:25.294Z"
+        }
+      },
+      {
+        "text": "thing",
+        "start_timestamp": {
+          "relative": 134.67336,
+          "absolute": "2026-09-22T09:37:25.294Z"
+        },
+        "end_timestamp": {
+          "relative": 134.75336,
+          "absolute": "2026-09-22T09:37:25.374Z"
+        }
+      },
+      {
+        "text": "on",
+        "start_timestamp": {
+          "relative": 134.91335,
+          "absolute": "2026-09-22T09:37:25.534Z"
+        },
+        "end_timestamp": {
+          "relative": 134.99335,
+          "absolute": "2026-09-22T09:37:25.614Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 134.99335,
+          "absolute": "2026-09-22T09:37:25.614Z"
+        },
+        "end_timestamp": {
+          "relative": 135.07335,
+          "absolute": "2026-09-22T09:37:25.694Z"
+        }
+      },
+      {
+        "text": "rollout",
+        "start_timestamp": {
+          "relative": 135.15335,
+          "absolute": "2026-09-22T09:37:25.774Z"
+        },
+        "end_timestamp": {
+          "relative": 135.31335,
+          "absolute": "2026-09-22T09:37:25.934Z"
+        }
+      },
+      {
+        "text": "side",
+        "start_timestamp": {
+          "relative": 135.39336,
+          "absolute": "2026-09-22T09:37:26.014Z"
+        },
+        "end_timestamp": {
+          "relative": 135.87335,
+          "absolute": "2026-09-22T09:37:26.494Z"
+        }
+      },
+      {
+        "text": "we",
+        "start_timestamp": {
+          "relative": 135.87335,
+          "absolute": "2026-09-22T09:37:26.494Z"
+        },
+        "end_timestamp": {
+          "relative": 135.87335,
+          "absolute": "2026-09-22T09:37:26.494Z"
         }
       },
       {
         "text": "will",
         "start_timestamp": {
-          "relative": 756.8973,
-          "absolute": "2026-09-22T07:11:21.454Z"
+          "relative": 135.95335,
+          "absolute": "2026-09-22T09:37:26.574Z"
         },
         "end_timestamp": {
-          "relative": 756.8973,
-          "absolute": "2026-09-22T07:11:21.454Z"
+          "relative": 136.03336,
+          "absolute": "2026-09-22T09:37:26.654Z"
         }
       },
       {
-        "text": "have",
+        "text": "need",
         "start_timestamp": {
-          "relative": 757.4573,
-          "absolute": "2026-09-22T07:11:22.014Z"
+          "relative": 136.27335,
+          "absolute": "2026-09-22T09:37:26.894Z"
         },
         "end_timestamp": {
-          "relative": 757.5373,
-          "absolute": "2026-09-22T07:11:22.094Z"
+          "relative": 136.35335,
+          "absolute": "2026-09-22T09:37:26.974Z"
+        }
+      },
+      {
+        "text": "sso",
+        "start_timestamp": {
+          "relative": 136.91335,
+          "absolute": "2026-09-22T09:37:27.534Z"
+        },
+        "end_timestamp": {
+          "relative": 137.15335,
+          "absolute": "2026-09-22T09:37:27.774Z"
+        }
+      },
+      {
+        "text": "before",
+        "start_timestamp": {
+          "relative": 137.23335,
+          "absolute": "2026-09-22T09:37:27.854Z"
+        },
+        "end_timestamp": {
+          "relative": 137.31335,
+          "absolute": "2026-09-22T09:37:27.934Z"
+        }
+      },
+      {
+        "text": "anyone",
+        "start_timestamp": {
+          "relative": 137.55334,
+          "absolute": "2026-09-22T09:37:28.174Z"
+        },
+        "end_timestamp": {
+          "relative": 137.79335,
+          "absolute": "2026-09-22T09:37:28.414Z"
+        }
+      },
+      {
+        "text": "logs",
+        "start_timestamp": {
+          "relative": 137.87335,
+          "absolute": "2026-09-22T09:37:28.494Z"
+        },
+        "end_timestamp": {
+          "relative": 138.03336,
+          "absolute": "2026-09-22T09:37:28.654Z"
+        }
+      },
+      {
+        "text": "in",
+        "start_timestamp": {
+          "relative": 138.03336,
+          "absolute": "2026-09-22T09:37:28.654Z"
+        },
+        "end_timestamp": {
+          "relative": 139.15335,
+          "absolute": "2026-09-22T09:37:29.774Z"
+        }
+      },
+      {
+        "text": "that's",
+        "start_timestamp": {
+          "relative": 139.15335,
+          "absolute": "2026-09-22T09:37:29.774Z"
+        },
+        "end_timestamp": {
+          "relative": 139.31335,
+          "absolute": "2026-09-22T09:37:29.934Z"
+        }
+      },
+      {
+        "text": "a",
+        "start_timestamp": {
+          "relative": 139.31335,
+          "absolute": "2026-09-22T09:37:29.934Z"
+        },
+        "end_timestamp": {
+          "relative": 139.31335,
+          "absolute": "2026-09-22T09:37:29.934Z"
+        }
+      },
+      {
+        "text": "hard",
+        "start_timestamp": {
+          "relative": 139.31335,
+          "absolute": "2026-09-22T09:37:29.934Z"
+        },
+        "end_timestamp": {
+          "relative": 139.39336,
+          "absolute": "2026-09-22T09:37:30.014Z"
+        }
+      },
+      {
+        "text": "requirement",
+        "start_timestamp": {
+          "relative": 139.47334,
+          "absolute": "2026-09-22T09:37:30.094Z"
+        },
+        "end_timestamp": {
+          "relative": 139.55334,
+          "absolute": "2026-09-22T09:37:30.174Z"
+        }
+      },
+      {
+        "text": "for",
+        "start_timestamp": {
+          "relative": 139.63335,
+          "absolute": "2026-09-22T09:37:30.254Z"
+        },
+        "end_timestamp": {
+          "relative": 139.71335,
+          "absolute": "2026-09-22T09:37:30.334Z"
         }
       },
       {
         "text": "my",
         "start_timestamp": {
-          "relative": 757.69727,
-          "absolute": "2026-09-22T07:11:22.254Z"
+          "relative": 140.11334,
+          "absolute": "2026-09-22T09:37:30.734Z"
         },
         "end_timestamp": {
-          "relative": 757.7773,
-          "absolute": "2026-09-22T07:11:22.334Z"
+          "relative": 140.19334,
+          "absolute": "2026-09-22T09:37:30.814Z"
         }
       },
       {
-        "text": "portion",
+        "text": "t",
         "start_timestamp": {
-          "relative": 757.7773,
-          "absolute": "2026-09-22T07:11:22.334Z"
+          "relative": 140.35335,
+          "absolute": "2026-09-22T09:37:30.974Z"
         },
         "end_timestamp": {
-          "relative": 758.0173,
-          "absolute": "2026-09-22T07:11:22.574Z"
+          "relative": 140.43335,
+          "absolute": "2026-09-22T09:37:31.054Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 100,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "XumLxVyCdj1ywcWXP0XPSMVs8h27Z1mJCkXfBVK3KLs="
+        }
+      },
+      "is_host": true,
+      "platform": "desktop",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "that",
+        "start_timestamp": {
+          "relative": 144.20837,
+          "absolute": "2026-09-22T09:37:34.829Z"
+        },
+        "end_timestamp": {
+          "relative": 144.28838,
+          "absolute": "2026-09-22T09:37:34.909Z"
         }
       },
       {
-        "text": "of",
+        "text": "works",
         "start_timestamp": {
-          "relative": 758.0173,
-          "absolute": "2026-09-22T07:11:22.574Z"
+          "relative": 144.28838,
+          "absolute": "2026-09-22T09:37:34.909Z"
         },
         "end_timestamp": {
-          "relative": 758.0973,
-          "absolute": "2026-09-22T07:11:22.654Z"
+          "relative": 144.92838,
+          "absolute": "2026-09-22T09:37:35.549Z"
+        }
+      },
+      {
+        "text": "one",
+        "start_timestamp": {
+          "relative": 144.92838,
+          "absolute": "2026-09-22T09:37:35.549Z"
+        },
+        "end_timestamp": {
+          "relative": 144.92838,
+          "absolute": "2026-09-22T09:37:35.549Z"
+        }
+      },
+      {
+        "text": "thing",
+        "start_timestamp": {
+          "relative": 145.00838,
+          "absolute": "2026-09-22T09:37:35.629Z"
+        },
+        "end_timestamp": {
+          "relative": 145.08838,
+          "absolute": "2026-09-22T09:37:35.709Z"
+        }
+      },
+      {
+        "text": "on",
+        "start_timestamp": {
+          "relative": 145.40839,
+          "absolute": "2026-09-22T09:37:36.029Z"
+        },
+        "end_timestamp": {
+          "relative": 145.48837,
+          "absolute": "2026-09-22T09:37:36.109Z"
         }
       },
       {
         "text": "the",
         "start_timestamp": {
-          "relative": 758.0973,
-          "absolute": "2026-09-22T07:11:22.654Z"
+          "relative": 145.48837,
+          "absolute": "2026-09-22T09:37:36.109Z"
         },
         "end_timestamp": {
-          "relative": 758.17725,
-          "absolute": "2026-09-22T07:11:22.734Z"
+          "relative": 145.56837,
+          "absolute": "2026-09-22T09:37:36.189Z"
         }
       },
       {
-        "text": "document",
+        "text": "rollout",
         "start_timestamp": {
-          "relative": 758.25726,
-          "absolute": "2026-09-22T07:11:22.814Z"
+          "relative": 145.88838,
+          "absolute": "2026-09-22T09:37:36.509Z"
         },
         "end_timestamp": {
-          "relative": 758.49725,
-          "absolute": "2026-09-22T07:11:23.054Z"
+          "relative": 146.04839,
+          "absolute": "2026-09-22T09:37:36.669Z"
         }
       },
       {
-        "text": "sent",
+        "text": "side",
         "start_timestamp": {
-          "relative": 758.81726,
-          "absolute": "2026-09-22T07:11:23.374Z"
+          "relative": 146.20837,
+          "absolute": "2026-09-22T09:37:36.829Z"
         },
         "end_timestamp": {
-          "relative": 758.8973,
-          "absolute": "2026-09-22T07:11:23.454Z"
+          "relative": 146.52838,
+          "absolute": "2026-09-22T09:37:37.149Z"
+        }
+      },
+      {
+        "text": "we'll",
+        "start_timestamp": {
+          "relative": 146.52838,
+          "absolute": "2026-09-22T09:37:37.149Z"
+        },
+        "end_timestamp": {
+          "relative": 146.52838,
+          "absolute": "2026-09-22T09:37:37.149Z"
+        }
+      },
+      {
+        "text": "need",
+        "start_timestamp": {
+          "relative": 146.60838,
+          "absolute": "2026-09-22T09:37:37.229Z"
+        },
+        "end_timestamp": {
+          "relative": 146.68839,
+          "absolute": "2026-09-22T09:37:37.309Z"
+        }
+      },
+      {
+        "text": "sso",
+        "start_timestamp": {
+          "relative": 146.92838,
+          "absolute": "2026-09-22T09:37:37.549Z"
+        },
+        "end_timestamp": {
+          "relative": 148.04839,
+          "absolute": "2026-09-22T09:37:38.669Z"
+        }
+      },
+      {
+        "text": "we",
+        "start_timestamp": {
+          "relative": 148.12837,
+          "absolute": "2026-09-22T09:37:38.749Z"
+        },
+        "end_timestamp": {
+          "relative": 148.20837,
+          "absolute": "2026-09-22T09:37:38.829Z"
+        }
+      },
+      {
+        "text": "support",
+        "start_timestamp": {
+          "relative": 148.20837,
+          "absolute": "2026-09-22T09:37:38.829Z"
+        },
+        "end_timestamp": {
+          "relative": 148.28838,
+          "absolute": "2026-09-22T09:37:38.909Z"
+        }
+      },
+      {
+        "text": "arca",
+        "start_timestamp": {
+          "relative": 148.60838,
+          "absolute": "2026-09-22T09:37:39.229Z"
+        },
+        "end_timestamp": {
+          "relative": 149.00838,
+          "absolute": "2026-09-22T09:37:39.629Z"
+        }
+      },
+      {
+        "text": "and",
+        "start_timestamp": {
+          "relative": 149.48837,
+          "absolute": "2026-09-22T09:37:40.109Z"
+        },
+        "end_timestamp": {
+          "relative": 149.56837,
+          "absolute": "2026-09-22T09:37:40.189Z"
+        }
+      },
+      {
+        "text": "azure",
+        "start_timestamp": {
+          "relative": 149.64838,
+          "absolute": "2026-09-22T09:37:40.269Z"
+        },
+        "end_timestamp": {
+          "relative": 149.72838,
+          "absolute": "2026-09-22T09:37:40.349Z"
+        }
+      },
+      {
+        "text": "ad",
+        "start_timestamp": {
+          "relative": 150.12837,
+          "absolute": "2026-09-22T09:37:40.749Z"
+        },
+        "end_timestamp": {
+          "relative": 150.92838,
+          "absolute": "2026-09-22T09:37:41.549Z"
+        }
+      },
+      {
+        "text": "so",
+        "start_timestamp": {
+          "relative": 150.92838,
+          "absolute": "2026-09-22T09:37:41.549Z"
+        },
+        "end_timestamp": {
+          "relative": 150.92838,
+          "absolute": "2026-09-22T09:37:41.549Z"
+        }
+      },
+      {
+        "text": "that's",
+        "start_timestamp": {
+          "relative": 150.92838,
+          "absolute": "2026-09-22T09:37:41.549Z"
+        },
+        "end_timestamp": {
+          "relative": 151.00838,
+          "absolute": "2026-09-22T09:37:41.629Z"
+        }
+      },
+      {
+        "text": "fine",
+        "start_timestamp": {
+          "relative": 151.08838,
+          "absolute": "2026-09-22T09:37:41.709Z"
+        },
+        "end_timestamp": {
+          "relative": 151.40839,
+          "absolute": "2026-09-22T09:37:42.029Z"
+        }
+      },
+      {
+        "text": "how",
+        "start_timestamp": {
+          "relative": 151.40839,
+          "absolute": "2026-09-22T09:37:42.029Z"
+        },
+        "end_timestamp": {
+          "relative": 151.40839,
+          "absolute": "2026-09-22T09:37:42.029Z"
+        }
+      },
+      {
+        "text": "many",
+        "start_timestamp": {
+          "relative": 151.48837,
+          "absolute": "2026-09-22T09:37:42.109Z"
+        },
+        "end_timestamp": {
+          "relative": 151.56837,
+          "absolute": "2026-09-22T09:37:42.189Z"
+        }
+      },
+      {
+        "text": "seats",
+        "start_timestamp": {
+          "relative": 151.80838,
+          "absolute": "2026-09-22T09:37:42.429Z"
+        },
+        "end_timestamp": {
+          "relative": 151.88838,
+          "absolute": "2026-09-22T09:37:42.509Z"
+        }
+      },
+      {
+        "text": "are",
+        "start_timestamp": {
+          "relative": 151.96838,
+          "absolute": "2026-09-22T09:37:42.589Z"
+        },
+        "end_timestamp": {
+          "relative": 152.04839,
+          "absolute": "2026-09-22T09:37:42.669Z"
+        }
+      },
+      {
+        "text": "we",
+        "start_timestamp": {
+          "relative": 152.12837,
+          "absolute": "2026-09-22T09:37:42.749Z"
+        },
+        "end_timestamp": {
+          "relative": 152.20837,
+          "absolute": "2026-09-22T09:37:42.829Z"
+        }
+      },
+      {
+        "text": "looking",
+        "start_timestamp": {
+          "relative": 152.20837,
+          "absolute": "2026-09-22T09:37:42.829Z"
+        },
+        "end_timestamp": {
+          "relative": 152.28838,
+          "absolute": "2026-09-22T09:37:42.909Z"
+        }
+      },
+      {
+        "text": "for",
+        "start_timestamp": {
+          "relative": 152.28838,
+          "absolute": "2026-09-22T09:37:42.909Z"
+        },
+        "end_timestamp": {
+          "relative": 152.36838,
+          "absolute": "2026-09-22T09:37:42.989Z"
+        }
+      },
+      {
+        "text": "at",
+        "start_timestamp": {
+          "relative": 152.76837,
+          "absolute": "2026-09-22T09:37:43.389Z"
+        },
+        "end_timestamp": {
+          "relative": 152.84837,
+          "absolute": "2026-09-22T09:37:43.469Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 152.84837,
+          "absolute": "2026-09-22T09:37:43.469Z"
+        },
+        "end_timestamp": {
+          "relative": 152.92838,
+          "absolute": "2026-09-22T09:37:43.549Z"
+        }
+      },
+      {
+        "text": "first",
+        "start_timestamp": {
+          "relative": 152.92838,
+          "absolute": "2026-09-22T09:37:43.549Z"
+        },
+        "end_timestamp": {
+          "relative": 153.00838,
+          "absolute": "2026-09-22T09:37:43.629Z"
+        }
+      },
+      {
+        "text": "phase",
+        "start_timestamp": {
+          "relative": 153.16838,
+          "absolute": "2026-09-22T09:37:43.789Z"
+        },
+        "end_timestamp": {
+          "relative": 153.24838,
+          "absolute": "2026-09-22T09:37:43.869Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 200,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "mVpTQ4V41sdeZ9rHXTkOrbl5OvBXTQersr9A_miRzWs="
+        }
+      },
+      "is_host": false,
+      "platform": "mobile_app",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "yeah",
+        "start_timestamp": {
+          "relative": 157.04404,
+          "absolute": "2026-09-22T09:37:47.665Z"
+        },
+        "end_timestamp": {
+          "relative": 157.36403,
+          "absolute": "2026-09-22T09:37:47.985Z"
+        }
+      },
+      {
+        "text": "around",
+        "start_timestamp": {
+          "relative": 157.36403,
+          "absolute": "2026-09-22T09:37:47.985Z"
+        },
+        "end_timestamp": {
+          "relative": 157.44403,
+          "absolute": "2026-09-22T09:37:48.065Z"
+        }
+      },
+      {
+        "text": "40",
+        "start_timestamp": {
+          "relative": 157.60403,
+          "absolute": "2026-09-22T09:37:48.225Z"
+        },
+        "end_timestamp": {
+          "relative": 157.76404,
+          "absolute": "2026-09-22T09:37:48.385Z"
+        }
+      },
+      {
+        "text": "mostly",
+        "start_timestamp": {
+          "relative": 158.16403,
+          "absolute": "2026-09-22T09:37:48.785Z"
+        },
+        "end_timestamp": {
+          "relative": 158.32404,
+          "absolute": "2026-09-22T09:37:48.945Z"
+        }
+      },
+      {
+        "text": "sales",
+        "start_timestamp": {
+          "relative": 158.32404,
+          "absolute": "2026-09-22T09:37:48.945Z"
+        },
+        "end_timestamp": {
+          "relative": 158.40404,
+          "absolute": "2026-09-22T09:37:49.025Z"
+        }
+      },
+      {
+        "text": "team",
+        "start_timestamp": {
+          "relative": 158.64403,
+          "absolute": "2026-09-22T09:37:49.265Z"
+        },
+        "end_timestamp": {
+          "relative": 158.72403,
+          "absolute": "2026-09-22T09:37:49.345Z"
+        }
+      },
+      {
+        "text": "can",
+        "start_timestamp": {
+          "relative": 159.36403,
+          "absolute": "2026-09-22T09:37:49.985Z"
+        },
+        "end_timestamp": {
+          "relative": 159.44403,
+          "absolute": "2026-09-22T09:37:50.065Z"
+        }
+      },
+      {
+        "text": "use",
+        "start_timestamp": {
+          "relative": 159.60403,
+          "absolute": "2026-09-22T09:37:50.225Z"
+        },
+        "end_timestamp": {
+          "relative": 159.68404,
+          "absolute": "2026-09-22T09:37:50.305Z"
+        }
+      },
+      {
+        "text": "can",
+        "start_timestamp": {
+          "relative": 159.92403,
+          "absolute": "2026-09-22T09:37:50.545Z"
+        },
+        "end_timestamp": {
+          "relative": 160.00403,
+          "absolute": "2026-09-22T09:37:50.625Z"
+        }
+      },
+      {
+        "text": "you",
+        "start_timestamp": {
+          "relative": 160.00403,
+          "absolute": "2026-09-22T09:37:50.625Z"
+        },
+        "end_timestamp": {
+          "relative": 160.08403,
+          "absolute": "2026-09-22T09:37:50.705Z"
+        }
+      },
+      {
+        "text": "send",
+        "start_timestamp": {
+          "relative": 160.16403,
+          "absolute": "2026-09-22T09:37:50.785Z"
+        },
+        "end_timestamp": {
+          "relative": 160.24403,
+          "absolute": "2026-09-22T09:37:50.865Z"
+        }
+      },
+      {
+        "text": "over",
+        "start_timestamp": {
+          "relative": 160.32404,
+          "absolute": "2026-09-22T09:37:50.945Z"
+        },
+        "end_timestamp": {
+          "relative": 160.40404,
+          "absolute": "2026-09-22T09:37:51.025Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 161.04404,
+          "absolute": "2026-09-22T09:37:51.665Z"
+        },
+        "end_timestamp": {
+          "relative": 161.12404,
+          "absolute": "2026-09-22T09:37:51.745Z"
+        }
+      },
+      {
+        "text": "security",
+        "start_timestamp": {
+          "relative": 161.36403,
+          "absolute": "2026-09-22T09:37:51.985Z"
+        },
+        "end_timestamp": {
+          "relative": 161.44403,
+          "absolute": "2026-09-22T09:37:52.065Z"
+        }
+      },
+      {
+        "text": "questionnaire",
+        "start_timestamp": {
+          "relative": 161.60403,
+          "absolute": "2026-09-22T09:37:52.225Z"
+        },
+        "end_timestamp": {
+          "relative": 161.84402,
+          "absolute": "2026-09-22T09:37:52.465Z"
+        }
+      },
+      {
+        "text": "keeps",
+        "start_timestamp": {
+          "relative": 162.64403,
+          "absolute": "2026-09-22T09:37:53.265Z"
+        },
+        "end_timestamp": {
+          "relative": 162.80403,
+          "absolute": "2026-09-22T09:37:53.425Z"
+        }
+      },
+      {
+        "text": "asking",
+        "start_timestamp": {
+          "relative": 162.80403,
+          "absolute": "2026-09-22T09:37:53.425Z"
+        },
+        "end_timestamp": {
+          "relative": 162.96404,
+          "absolute": "2026-09-22T09:37:53.585Z"
+        }
+      },
+      {
+        "text": "me",
+        "start_timestamp": {
+          "relative": 163.04404,
+          "absolute": "2026-09-22T09:37:53.665Z"
+        },
+        "end_timestamp": {
+          "relative": 163.12404,
+          "absolute": "2026-09-22T09:37:53.745Z"
+        }
+      },
+      {
+        "text": "for",
+        "start_timestamp": {
+          "relative": 163.12404,
+          "absolute": "2026-09-22T09:37:53.745Z"
+        },
+        "end_timestamp": {
+          "relative": 163.20403,
+          "absolute": "2026-09-22T09:37:53.825Z"
+        }
+      },
+      {
+        "text": "it",
+        "start_timestamp": {
+          "relative": 163.20403,
+          "absolute": "2026-09-22T09:37:53.825Z"
+        },
+        "end_timestamp": {
+          "relative": 163.28403,
+          "absolute": "2026-09-22T09:37:53.905Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 100,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "XumLxVyCdj1ywcWXP0XPSMVs8h27Z1mJCkXfBVK3KLs="
+        }
+      },
+      "is_host": true,
+      "platform": "desktop",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "yeah",
+        "start_timestamp": {
+          "relative": 172.63567,
+          "absolute": "2026-09-22T09:38:03.256Z"
+        },
+        "end_timestamp": {
+          "relative": 173.27567,
+          "absolute": "2026-09-22T09:38:03.896Z"
+        }
+      },
+      {
+        "text": "i'll",
+        "start_timestamp": {
+          "relative": 173.27567,
+          "absolute": "2026-09-22T09:38:03.896Z"
+        },
+        "end_timestamp": {
+          "relative": 173.35567,
+          "absolute": "2026-09-22T09:38:03.976Z"
+        }
+      },
+      {
+        "text": "give",
+        "start_timestamp": {
+          "relative": 173.35567,
+          "absolute": "2026-09-22T09:38:03.976Z"
+        },
+        "end_timestamp": {
+          "relative": 173.43567,
+          "absolute": "2026-09-22T09:38:04.056Z"
+        }
+      },
+      {
+        "text": "that",
+        "start_timestamp": {
+          "relative": 173.51567,
+          "absolute": "2026-09-22T09:38:04.136Z"
+        },
+        "end_timestamp": {
+          "relative": 173.59566,
+          "absolute": "2026-09-22T09:38:04.216Z"
+        }
+      },
+      {
+        "text": "to",
+        "start_timestamp": {
+          "relative": 173.67566,
+          "absolute": "2026-09-22T09:38:04.296Z"
+        },
+        "end_timestamp": {
+          "relative": 173.75566,
+          "absolute": "2026-09-22T09:38:04.376Z"
+        }
+      },
+      {
+        "text": "you",
+        "start_timestamp": {
+          "relative": 173.75566,
+          "absolute": "2026-09-22T09:38:04.376Z"
+        },
+        "end_timestamp": {
+          "relative": 173.83566,
+          "absolute": "2026-09-22T09:38:04.456Z"
+        }
+      },
+      {
+        "text": "tonight",
+        "start_timestamp": {
+          "relative": 174.15567,
+          "absolute": "2026-09-22T09:38:04.776Z"
+        },
+        "end_timestamp": {
+          "relative": 174.31566,
+          "absolute": "2026-09-22T09:38:04.936Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 200,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "mVpTQ4V41sdeZ9rHXTkOrbl5OvBXTQersr9A_miRzWs="
+        }
+      },
+      "is_host": false,
+      "platform": "mobile_app",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "perfect",
+        "start_timestamp": {
+          "relative": 176.53456,
+          "absolute": "2026-09-22T09:38:07.155Z"
+        },
+        "end_timestamp": {
+          "relative": 177.09456,
+          "absolute": "2026-09-22T09:38:07.715Z"
+        }
+      },
+      {
+        "text": "and",
+        "start_timestamp": {
+          "relative": 177.09456,
+          "absolute": "2026-09-22T09:38:07.715Z"
+        },
+        "end_timestamp": {
+          "relative": 177.09456,
+          "absolute": "2026-09-22T09:38:07.715Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 177.09456,
+          "absolute": "2026-09-22T09:38:07.715Z"
+        },
+        "end_timestamp": {
+          "relative": 177.09456,
+          "absolute": "2026-09-22T09:38:07.715Z"
+        }
+      },
+      {
+        "text": "pricing",
+        "start_timestamp": {
+          "relative": 177.17456,
+          "absolute": "2026-09-22T09:38:07.795Z"
+        },
+        "end_timestamp": {
+          "relative": 177.65456,
+          "absolute": "2026-09-22T09:38:08.275Z"
+        }
+      },
+      {
+        "text": "is",
+        "start_timestamp": {
+          "relative": 177.65456,
+          "absolute": "2026-09-22T09:38:08.275Z"
+        },
+        "end_timestamp": {
+          "relative": 177.65456,
+          "absolute": "2026-09-22T09:38:08.275Z"
+        }
+      },
+      {
+        "text": "there",
+        "start_timestamp": {
+          "relative": 177.65456,
+          "absolute": "2026-09-22T09:38:08.275Z"
+        },
+        "end_timestamp": {
+          "relative": 177.73456,
+          "absolute": "2026-09-22T09:38:08.355Z"
+        }
+      },
+      {
+        "text": "any",
+        "start_timestamp": {
+          "relative": 177.81456,
+          "absolute": "2026-09-22T09:38:08.435Z"
+        },
+        "end_timestamp": {
+          "relative": 177.89456,
+          "absolute": "2026-09-22T09:38:08.515Z"
+        }
+      },
+      {
+        "text": "flexibility",
+        "start_timestamp": {
+          "relative": 177.89456,
+          "absolute": "2026-09-22T09:38:08.515Z"
+        },
+        "end_timestamp": {
+          "relative": 178.05455,
+          "absolute": "2026-09-22T09:38:08.675Z"
+        }
+      },
+      {
+        "text": "if",
+        "start_timestamp": {
+          "relative": 178.45456,
+          "absolute": "2026-09-22T09:38:09.075Z"
+        },
+        "end_timestamp": {
+          "relative": 178.53456,
+          "absolute": "2026-09-22T09:38:09.155Z"
+        }
+      },
+      {
+        "text": "we",
+        "start_timestamp": {
+          "relative": 178.53456,
+          "absolute": "2026-09-22T09:38:09.155Z"
+        },
+        "end_timestamp": {
+          "relative": 178.53456,
+          "absolute": "2026-09-22T09:38:09.155Z"
+        }
+      },
+      {
+        "text": "go",
+        "start_timestamp": {
+          "relative": 178.61456,
+          "absolute": "2026-09-22T09:38:09.235Z"
+        },
+        "end_timestamp": {
+          "relative": 178.69455,
+          "absolute": "2026-09-22T09:38:09.315Z"
+        }
+      },
+      {
+        "text": "to",
+        "start_timestamp": {
+          "relative": 178.77455,
+          "absolute": "2026-09-22T09:38:09.395Z"
+        },
+        "end_timestamp": {
+          "relative": 178.85455,
+          "absolute": "2026-09-22T09:38:09.475Z"
+        }
+      },
+      {
+        "text": "60",
+        "start_timestamp": {
+          "relative": 179.09456,
+          "absolute": "2026-09-22T09:38:09.715Z"
+        },
+        "end_timestamp": {
+          "relative": 179.25456,
+          "absolute": "2026-09-22T09:38:09.875Z"
+        }
+      },
+      {
+        "text": "seats",
+        "start_timestamp": {
+          "relative": 179.25456,
+          "absolute": "2026-09-22T09:38:09.875Z"
+        },
+        "end_timestamp": {
+          "relative": 179.33455,
+          "absolute": "2026-09-22T09:38:09.955Z"
+        }
+      },
+      {
+        "text": "in",
+        "start_timestamp": {
+          "relative": 179.41455,
+          "absolute": "2026-09-22T09:38:10.035Z"
+        },
+        "end_timestamp": {
+          "relative": 179.49455,
+          "absolute": "2026-09-22T09:38:10.115Z"
+        }
+      },
+      {
+        "text": "q1",
+        "start_timestamp": {
+          "relative": 179.57455,
+          "absolute": "2026-09-22T09:38:10.195Z"
+        },
+        "end_timestamp": {
+          "relative": 179.73456,
+          "absolute": "2026-09-22T09:38:10.355Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 100,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "XumLxVyCdj1ywcWXP0XPSMVs8h27Z1mJCkXfBVK3KLs="
+        }
+      },
+      "is_host": true,
+      "platform": "desktop",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "probably",
+        "start_timestamp": {
+          "relative": 182.76564,
+          "absolute": "2026-09-22T09:38:13.386Z"
+        },
+        "end_timestamp": {
+          "relative": 182.92564,
+          "absolute": "2026-09-22T09:38:13.546Z"
+        }
+      },
+      {
+        "text": "let",
+        "start_timestamp": {
+          "relative": 182.92564,
+          "absolute": "2026-09-22T09:38:13.546Z"
+        },
+        "end_timestamp": {
+          "relative": 182.92564,
+          "absolute": "2026-09-22T09:38:13.546Z"
+        }
+      },
+      {
+        "text": "me",
+        "start_timestamp": {
+          "relative": 182.92564,
+          "absolute": "2026-09-22T09:38:13.546Z"
+        },
+        "end_timestamp": {
+          "relative": 183.00565,
+          "absolute": "2026-09-22T09:38:13.626Z"
+        }
+      },
+      {
+        "text": "check",
+        "start_timestamp": {
+          "relative": 183.08565,
+          "absolute": "2026-09-22T09:38:13.706Z"
+        },
+        "end_timestamp": {
+          "relative": 183.16565,
+          "absolute": "2026-09-22T09:38:13.786Z"
+        }
+      },
+      {
+        "text": "with",
+        "start_timestamp": {
+          "relative": 183.32565,
+          "absolute": "2026-09-22T09:38:13.946Z"
+        },
+        "end_timestamp": {
+          "relative": 183.40564,
+          "absolute": "2026-09-22T09:38:14.026Z"
+        }
+      },
+      {
+        "text": "our",
+        "start_timestamp": {
+          "relative": 183.40564,
+          "absolute": "2026-09-22T09:38:14.026Z"
+        },
+        "end_timestamp": {
+          "relative": 183.48564,
+          "absolute": "2026-09-22T09:38:14.106Z"
+        }
+      },
+      {
+        "text": "cfo",
+        "start_timestamp": {
+          "relative": 183.56564,
+          "absolute": "2026-09-22T09:38:14.186Z"
+        },
+        "end_timestamp": {
+          "relative": 183.80565,
+          "absolute": "2026-09-22T09:38:14.426Z"
+        }
+      },
+      {
+        "text": "and",
+        "start_timestamp": {
+          "relative": 184.04565,
+          "absolute": "2026-09-22T09:38:14.666Z"
+        },
+        "end_timestamp": {
+          "relative": 184.12564,
+          "absolute": "2026-09-22T09:38:14.746Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 184.12564,
+          "absolute": "2026-09-22T09:38:14.746Z"
+        },
+        "end_timestamp": {
+          "relative": 184.20564,
+          "absolute": "2026-09-22T09:38:14.826Z"
+        }
+      },
+      {
+        "text": "pricing",
+        "start_timestamp": {
+          "relative": 184.20564,
+          "absolute": "2026-09-22T09:38:14.826Z"
+        },
+        "end_timestamp": {
+          "relative": 184.68565,
+          "absolute": "2026-09-22T09:38:15.306Z"
+        }
+      },
+      {
+        "text": "i'll",
+        "start_timestamp": {
+          "relative": 184.68565,
+          "absolute": "2026-09-22T09:38:15.306Z"
+        },
+        "end_timestamp": {
+          "relative": 184.68565,
+          "absolute": "2026-09-22T09:38:15.306Z"
+        }
+      },
+      {
+        "text": "get",
+        "start_timestamp": {
+          "relative": 184.68565,
+          "absolute": "2026-09-22T09:38:15.306Z"
+        },
+        "end_timestamp": {
+          "relative": 184.76564,
+          "absolute": "2026-09-22T09:38:15.386Z"
+        }
+      },
+      {
+        "text": "back",
+        "start_timestamp": {
+          "relative": 184.76564,
+          "absolute": "2026-09-22T09:38:15.386Z"
+        },
+        "end_timestamp": {
+          "relative": 184.84564,
+          "absolute": "2026-09-22T09:38:15.466Z"
+        }
+      },
+      {
+        "text": "to",
+        "start_timestamp": {
+          "relative": 184.84564,
+          "absolute": "2026-09-22T09:38:15.466Z"
+        },
+        "end_timestamp": {
+          "relative": 184.92564,
+          "absolute": "2026-09-22T09:38:15.546Z"
+        }
+      },
+      {
+        "text": "you",
+        "start_timestamp": {
+          "relative": 184.92564,
+          "absolute": "2026-09-22T09:38:15.546Z"
+        },
+        "end_timestamp": {
+          "relative": 184.92564,
+          "absolute": "2026-09-22T09:38:15.546Z"
+        }
+      },
+      {
+        "text": "on",
+        "start_timestamp": {
+          "relative": 185.08565,
+          "absolute": "2026-09-22T09:38:15.706Z"
+        },
+        "end_timestamp": {
+          "relative": 185.16565,
+          "absolute": "2026-09-22T09:38:15.786Z"
+        }
+      },
+      {
+        "text": "that",
+        "start_timestamp": {
+          "relative": 185.16565,
+          "absolute": "2026-09-22T09:38:15.786Z"
+        },
+        "end_timestamp": {
+          "relative": 185.24565,
+          "absolute": "2026-09-22T09:38:15.866Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 200,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "mVpTQ4V41sdeZ9rHXTkOrbl5OvBXTQersr9A_miRzWs="
+        }
+      },
+      "is_host": false,
+      "platform": "mobile_app",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "appreciate",
+        "start_timestamp": {
+          "relative": 187.97905,
+          "absolute": "2026-09-22T09:38:18.600Z"
+        },
+        "end_timestamp": {
+          "relative": 188.21906,
+          "absolute": "2026-09-22T09:38:18.840Z"
+        }
+      },
+      {
+        "text": "it",
+        "start_timestamp": {
+          "relative": 188.29904,
+          "absolute": "2026-09-22T09:38:18.920Z"
+        },
+        "end_timestamp": {
+          "relative": 188.37904,
+          "absolute": "2026-09-22T09:38:19Z"
+        }
+      },
+      {
+        "text": "on",
+        "start_timestamp": {
+          "relative": 188.53905,
+          "absolute": "2026-09-22T09:38:19.160Z"
+        },
+        "end_timestamp": {
+          "relative": 188.61905,
+          "absolute": "2026-09-22T09:38:19.240Z"
+        }
+      },
+      {
+        "text": "my",
+        "start_timestamp": {
+          "relative": 188.69905,
+          "absolute": "2026-09-22T09:38:19.320Z"
+        },
+        "end_timestamp": {
+          "relative": 188.77905,
+          "absolute": "2026-09-22T09:38:19.400Z"
+        }
+      },
+      {
+        "text": "side",
+        "start_timestamp": {
+          "relative": 188.77905,
+          "absolute": "2026-09-22T09:38:19.400Z"
+        },
+        "end_timestamp": {
+          "relative": 189.09904,
+          "absolute": "2026-09-22T09:38:19.720Z"
+        }
+      },
+      {
+        "text": "i'll",
+        "start_timestamp": {
+          "relative": 189.09904,
+          "absolute": "2026-09-22T09:38:19.720Z"
+        },
+        "end_timestamp": {
+          "relative": 189.09904,
+          "absolute": "2026-09-22T09:38:19.720Z"
+        }
+      },
+      {
+        "text": "get",
+        "start_timestamp": {
+          "relative": 189.09904,
+          "absolute": "2026-09-22T09:38:19.720Z"
+        },
+        "end_timestamp": {
+          "relative": 189.17905,
+          "absolute": "2026-09-22T09:38:19.800Z"
+        }
+      },
+      {
+        "text": "you",
+        "start_timestamp": {
+          "relative": 189.17905,
+          "absolute": "2026-09-22T09:38:19.800Z"
+        },
+        "end_timestamp": {
+          "relative": 189.25905,
+          "absolute": "2026-09-22T09:38:19.880Z"
+        }
+      },
+      {
+        "text": "our",
+        "start_timestamp": {
+          "relative": 189.97905,
+          "absolute": "2026-09-22T09:38:20.600Z"
+        },
+        "end_timestamp": {
+          "relative": 190.05905,
+          "absolute": "2026-09-22T09:38:20.680Z"
+        }
+      },
+      {
+        "text": "procurement",
+        "start_timestamp": {
+          "relative": 190.21906,
+          "absolute": "2026-09-22T09:38:20.840Z"
+        },
+        "end_timestamp": {
+          "relative": 190.29904,
+          "absolute": "2026-09-22T09:38:20.920Z"
+        }
+      },
+      {
+        "text": "contact",
+        "start_timestamp": {
+          "relative": 190.61905,
+          "absolute": "2026-09-22T09:38:21.240Z"
+        },
+        "end_timestamp": {
+          "relative": 190.69905,
+          "absolute": "2026-09-22T09:38:21.320Z"
+        }
+      },
+      {
+        "text": "by",
+        "start_timestamp": {
+          "relative": 191.33905,
+          "absolute": "2026-09-22T09:38:21.960Z"
+        },
+        "end_timestamp": {
+          "relative": 191.41905,
+          "absolute": "2026-09-22T09:38:22.040Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 191.41905,
+          "absolute": "2026-09-22T09:38:22.040Z"
+        },
+        "end_timestamp": {
+          "relative": 191.49905,
+          "absolute": "2026-09-22T09:38:22.120Z"
+        }
+      },
+      {
+        "text": "end",
+        "start_timestamp": {
+          "relative": 191.49905,
+          "absolute": "2026-09-22T09:38:22.120Z"
+        },
+        "end_timestamp": {
+          "relative": 191.57906,
+          "absolute": "2026-09-22T09:38:22.200Z"
+        }
+      },
+      {
+        "text": "of",
+        "start_timestamp": {
+          "relative": 191.65904,
+          "absolute": "2026-09-22T09:38:22.280Z"
+        },
+        "end_timestamp": {
+          "relative": 191.73904,
+          "absolute": "2026-09-22T09:38:22.360Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 191.81905,
+          "absolute": "2026-09-22T09:38:22.440Z"
+        },
+        "end_timestamp": {
+          "relative": 191.89905,
+          "absolute": "2026-09-22T09:38:22.520Z"
+        }
+      },
+      {
+        "text": "week",
+        "start_timestamp": {
+          "relative": 191.89905,
+          "absolute": "2026-09-22T09:38:22.520Z"
+        },
+        "end_timestamp": {
+          "relative": 191.89905,
+          "absolute": "2026-09-22T09:38:22.520Z"
+        }
+      },
+      {
+        "text": "so",
+        "start_timestamp": {
+          "relative": 191.97905,
+          "absolute": "2026-09-22T09:38:22.600Z"
+        },
+        "end_timestamp": {
+          "relative": 192.05905,
+          "absolute": "2026-09-22T09:38:22.680Z"
+        }
+      },
+      {
+        "text": "that",
+        "start_timestamp": {
+          "relative": 192.21906,
+          "absolute": "2026-09-22T09:38:22.840Z"
+        },
+        "end_timestamp": {
+          "relative": 192.29904,
+          "absolute": "2026-09-22T09:38:22.920Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 192.29904,
+          "absolute": "2026-09-22T09:38:22.920Z"
+        },
+        "end_timestamp": {
+          "relative": 192.37904,
+          "absolute": "2026-09-22T09:38:23Z"
+        }
+      },
+      {
+        "text": "form",
+        "start_timestamp": {
+          "relative": 192.37904,
+          "absolute": "2026-09-22T09:38:23Z"
+        },
+        "end_timestamp": {
+          "relative": 192.45905,
+          "absolute": "2026-09-22T09:38:23.080Z"
+        }
+      },
+      {
+        "text": "doesn't",
+        "start_timestamp": {
+          "relative": 192.53905,
+          "absolute": "2026-09-22T09:38:23.160Z"
+        },
+        "end_timestamp": {
+          "relative": 192.61905,
+          "absolute": "2026-09-22T09:38:23.240Z"
+        }
+      },
+      {
+        "text": "get",
+        "start_timestamp": {
+          "relative": 192.69905,
+          "absolute": "2026-09-22T09:38:23.320Z"
+        },
+        "end_timestamp": {
+          "relative": 192.77905,
+          "absolute": "2026-09-22T09:38:23.400Z"
+        }
+      },
+      {
+        "text": "stuck",
+        "start_timestamp": {
+          "relative": 192.77905,
+          "absolute": "2026-09-22T09:38:23.400Z"
+        },
+        "end_timestamp": {
+          "relative": 192.85905,
+          "absolute": "2026-09-22T09:38:23.480Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 100,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "XumLxVyCdj1ywcWXP0XPSMVs8h27Z1mJCkXfBVK3KLs="
+        }
+      },
+      "is_host": true,
+      "platform": "desktop",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "great",
+        "start_timestamp": {
+          "relative": 195.16394,
+          "absolute": "2026-09-22T09:38:25.784Z"
+        },
+        "end_timestamp": {
+          "relative": 195.48395,
+          "absolute": "2026-09-22T09:38:26.104Z"
+        }
+      },
+      {
+        "text": "anything",
+        "start_timestamp": {
+          "relative": 195.48395,
+          "absolute": "2026-09-22T09:38:26.104Z"
+        },
+        "end_timestamp": {
+          "relative": 195.56395,
+          "absolute": "2026-09-22T09:38:26.184Z"
+        }
+      },
+      {
+        "text": "else",
+        "start_timestamp": {
+          "relative": 195.72394,
+          "absolute": "2026-09-22T09:38:26.344Z"
+        },
+        "end_timestamp": {
+          "relative": 195.80394,
+          "absolute": "2026-09-22T09:38:26.424Z"
+        }
+      },
+      {
+        "text": "blocking",
+        "start_timestamp": {
+          "relative": 195.96394,
+          "absolute": "2026-09-22T09:38:26.584Z"
+        },
+        "end_timestamp": {
+          "relative": 196.12395,
+          "absolute": "2026-09-22T09:38:26.744Z"
+        }
+      },
+      {
+        "text": "this",
+        "start_timestamp": {
+          "relative": 197.24394,
+          "absolute": "2026-09-22T09:38:27.864Z"
+        },
+        "end_timestamp": {
+          "relative": 197.32394,
+          "absolute": "2026-09-22T09:38:27.944Z"
         }
       },
       {
         "text": "or",
         "start_timestamp": {
-          "relative": 759.7773,
-          "absolute": "2026-09-22T07:11:24.334Z"
+          "relative": 197.80394,
+          "absolute": "2026-09-22T09:38:28.424Z"
         },
         "end_timestamp": {
-          "relative": 759.8573,
-          "absolute": "2026-09-22T07:11:24.414Z"
+          "relative": 197.88394,
+          "absolute": "2026-09-22T09:38:28.504Z"
         }
       },
       {
-        "text": "signed",
+        "text": "any",
         "start_timestamp": {
-          "relative": 759.93726,
-          "absolute": "2026-09-22T07:11:24.494Z"
+          "relative": 197.96394,
+          "absolute": "2026-09-22T09:38:28.584Z"
         },
         "end_timestamp": {
-          "relative": 760.3373,
-          "absolute": "2026-09-22T07:11:24.894Z"
+          "relative": 198.04395,
+          "absolute": "2026-09-22T09:38:28.664Z"
+        }
+      },
+      {
+        "text": "other",
+        "start_timestamp": {
+          "relative": 198.12395,
+          "absolute": "2026-09-22T09:38:28.744Z"
+        },
+        "end_timestamp": {
+          "relative": 198.20395,
+          "absolute": "2026-09-22T09:38:28.824Z"
+        }
+      },
+      {
+        "text": "hold",
+        "start_timestamp": {
+          "relative": 198.52394,
+          "absolute": "2026-09-22T09:38:29.144Z"
+        },
+        "end_timestamp": {
+          "relative": 198.60394,
+          "absolute": "2026-09-22T09:38:29.224Z"
+        }
+      },
+      {
+        "text": "up",
+        "start_timestamp": {
+          "relative": 198.76395,
+          "absolute": "2026-09-22T09:38:29.384Z"
+        },
+        "end_timestamp": {
+          "relative": 198.84395,
+          "absolute": "2026-09-22T09:38:29.464Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 200,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "mVpTQ4V41sdeZ9rHXTkOrbl5OvBXTQersr9A_miRzWs="
+        }
+      },
+      "is_host": false,
+      "platform": "mobile_app",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "i",
+        "start_timestamp": {
+          "relative": 200.95752,
+          "absolute": "2026-09-22T09:38:31.578Z"
+        },
+        "end_timestamp": {
+          "relative": 201.03752,
+          "absolute": "2026-09-22T09:38:31.658Z"
+        }
+      },
+      {
+        "text": "think",
+        "start_timestamp": {
+          "relative": 201.03752,
+          "absolute": "2026-09-22T09:38:31.658Z"
+        },
+        "end_timestamp": {
+          "relative": 201.03752,
+          "absolute": "2026-09-22T09:38:31.658Z"
+        }
+      },
+      {
+        "text": "that's",
+        "start_timestamp": {
+          "relative": 201.35751,
+          "absolute": "2026-09-22T09:38:31.978Z"
+        },
+        "end_timestamp": {
+          "relative": 201.43752,
+          "absolute": "2026-09-22T09:38:32.058Z"
+        }
+      },
+      {
+        "text": "legal",
+        "start_timestamp": {
+          "relative": 201.91751,
+          "absolute": "2026-09-22T09:38:32.538Z"
+        },
+        "end_timestamp": {
+          "relative": 202.07751,
+          "absolute": "2026-09-22T09:38:32.698Z"
+        }
+      },
+      {
+        "text": "is",
+        "start_timestamp": {
+          "relative": 202.23752,
+          "absolute": "2026-09-22T09:38:32.858Z"
+        },
+        "end_timestamp": {
+          "relative": 202.31752,
+          "absolute": "2026-09-22T09:38:32.938Z"
+        }
+      },
+      {
+        "text": "just",
+        "start_timestamp": {
+          "relative": 202.31752,
+          "absolute": "2026-09-22T09:38:32.938Z"
+        },
+        "end_timestamp": {
+          "relative": 202.39752,
+          "absolute": "2026-09-22T09:38:33.018Z"
+        }
+      },
+      {
+        "text": "a",
+        "start_timestamp": {
+          "relative": 202.95752,
+          "absolute": "2026-09-22T09:38:33.578Z"
+        },
+        "end_timestamp": {
+          "relative": 203.03752,
+          "absolute": "2026-09-22T09:38:33.658Z"
+        }
+      },
+      {
+        "text": "log",
+        "start_timestamp": {
+          "relative": 203.11752,
+          "absolute": "2026-09-22T09:38:33.738Z"
+        },
+        "end_timestamp": {
+          "relative": 203.19751,
+          "absolute": "2026-09-22T09:38:33.818Z"
+        }
+      },
+      {
+        "text": "battle",
+        "start_timestamp": {
+          "relative": 203.19751,
+          "absolute": "2026-09-22T09:38:33.818Z"
+        },
+        "end_timestamp": {
+          "relative": 203.35751,
+          "absolute": "2026-09-22T09:38:33.978Z"
+        }
+      },
+      {
+        "text": "right",
+        "start_timestamp": {
+          "relative": 203.43752,
+          "absolute": "2026-09-22T09:38:34.058Z"
+        },
+        "end_timestamp": {
+          "relative": 203.51752,
+          "absolute": "2026-09-22T09:38:34.138Z"
+        }
+      },
+      {
+        "text": "now",
+        "start_timestamp": {
+          "relative": 203.51752,
+          "absolute": "2026-09-22T09:38:34.138Z"
+        },
+        "end_timestamp": {
+          "relative": 204.47752,
+          "absolute": "2026-09-22T09:38:35.098Z"
+        }
+      },
+      {
+        "text": "but",
+        "start_timestamp": {
+          "relative": 204.47752,
+          "absolute": "2026-09-22T09:38:35.098Z"
+        },
+        "end_timestamp": {
+          "relative": 204.47752,
+          "absolute": "2026-09-22T09:38:35.098Z"
+        }
+      },
+      {
+        "text": "i",
+        "start_timestamp": {
+          "relative": 204.47752,
+          "absolute": "2026-09-22T09:38:35.098Z"
+        },
+        "end_timestamp": {
+          "relative": 204.55751,
+          "absolute": "2026-09-22T09:38:35.178Z"
+        }
+      },
+      {
+        "text": "think",
+        "start_timestamp": {
+          "relative": 204.55751,
+          "absolute": "2026-09-22T09:38:35.178Z"
+        },
+        "end_timestamp": {
+          "relative": 204.55751,
+          "absolute": "2026-09-22T09:38:35.178Z"
+        }
+      },
+      {
+        "text": "everything",
+        "start_timestamp": {
+          "relative": 204.71751,
+          "absolute": "2026-09-22T09:38:35.338Z"
+        },
+        "end_timestamp": {
+          "relative": 204.79752,
+          "absolute": "2026-09-22T09:38:35.418Z"
+        }
+      },
+      {
+        "text": "else",
+        "start_timestamp": {
+          "relative": 205.11752,
+          "absolute": "2026-09-22T09:38:35.738Z"
+        },
+        "end_timestamp": {
+          "relative": 205.19751,
+          "absolute": "2026-09-22T09:38:35.818Z"
+        }
+      },
+      {
+        "text": "should",
+        "start_timestamp": {
+          "relative": 205.19751,
+          "absolute": "2026-09-22T09:38:35.818Z"
+        },
+        "end_timestamp": {
+          "relative": 205.27751,
+          "absolute": "2026-09-22T09:38:35.898Z"
+        }
+      },
+      {
+        "text": "be",
+        "start_timestamp": {
+          "relative": 205.27751,
+          "absolute": "2026-09-22T09:38:35.898Z"
+        },
+        "end_timestamp": {
+          "relative": 205.27751,
+          "absolute": "2026-09-22T09:38:35.898Z"
+        }
+      },
+      {
+        "text": "fine",
+        "start_timestamp": {
+          "relative": 205.43752,
+          "absolute": "2026-09-22T09:38:36.058Z"
+        },
+        "end_timestamp": {
+          "relative": 205.51752,
+          "absolute": "2026-09-22T09:38:36.138Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 100,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "XumLxVyCdj1ywcWXP0XPSMVs8h27Z1mJCkXfBVK3KLs="
+        }
+      },
+      "is_host": true,
+      "platform": "desktop",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "actually",
+        "start_timestamp": {
+          "relative": 209.41461,
+          "absolute": "2026-09-22T09:38:40.035Z"
+        },
+        "end_timestamp": {
+          "relative": 209.8146,
+          "absolute": "2026-09-22T09:38:40.435Z"
+        }
+      },
+      {
+        "text": "let",
+        "start_timestamp": {
+          "relative": 209.8146,
+          "absolute": "2026-09-22T09:38:40.435Z"
+        },
+        "end_timestamp": {
+          "relative": 209.8146,
+          "absolute": "2026-09-22T09:38:40.435Z"
+        }
+      },
+      {
+        "text": "me",
+        "start_timestamp": {
+          "relative": 209.8146,
+          "absolute": "2026-09-22T09:38:40.435Z"
+        },
+        "end_timestamp": {
+          "relative": 209.8146,
+          "absolute": "2026-09-22T09:38:40.435Z"
+        }
+      },
+      {
+        "text": "revise",
+        "start_timestamp": {
+          "relative": 210.29462,
+          "absolute": "2026-09-22T09:38:40.915Z"
+        },
+        "end_timestamp": {
+          "relative": 210.45462,
+          "absolute": "2026-09-22T09:38:41.075Z"
+        }
+      },
+      {
+        "text": "that",
+        "start_timestamp": {
+          "relative": 210.5346,
+          "absolute": "2026-09-22T09:38:41.155Z"
+        },
+        "end_timestamp": {
+          "relative": 211.25461,
+          "absolute": "2026-09-22T09:38:41.875Z"
+        }
+      },
+      {
+        "text": "i'll",
+        "start_timestamp": {
+          "relative": 211.25461,
+          "absolute": "2026-09-22T09:38:41.875Z"
+        },
+        "end_timestamp": {
+          "relative": 211.25461,
+          "absolute": "2026-09-22T09:38:41.875Z"
+        }
+      },
+      {
+        "text": "send",
+        "start_timestamp": {
+          "relative": 211.33461,
+          "absolute": "2026-09-22T09:38:41.955Z"
+        },
+        "end_timestamp": {
+          "relative": 211.41461,
+          "absolute": "2026-09-22T09:38:42.035Z"
+        }
+      },
+      {
+        "text": "the",
+        "start_timestamp": {
+          "relative": 211.41461,
+          "absolute": "2026-09-22T09:38:42.035Z"
+        },
+        "end_timestamp": {
+          "relative": 211.49461,
+          "absolute": "2026-09-22T09:38:42.115Z"
+        }
+      },
+      {
+        "text": "msa",
+        "start_timestamp": {
+          "relative": 211.65462,
+          "absolute": "2026-09-22T09:38:42.275Z"
+        },
+        "end_timestamp": {
+          "relative": 211.8946,
+          "absolute": "2026-09-22T09:38:42.515Z"
+        }
+      },
+      {
+        "text": "wednesday",
+        "start_timestamp": {
+          "relative": 212.13461,
+          "absolute": "2026-09-22T09:38:42.755Z"
+        },
+        "end_timestamp": {
+          "relative": 212.29462,
+          "absolute": "2026-09-22T09:38:42.915Z"
+        }
+      },
+      {
+        "text": "so",
+        "start_timestamp": {
+          "relative": 212.69461,
+          "absolute": "2026-09-22T09:38:43.315Z"
+        },
+        "end_timestamp": {
+          "relative": 212.77461,
+          "absolute": "2026-09-22T09:38:43.395Z"
+        }
+      },
+      {
+        "text": "legal",
+        "start_timestamp": {
+          "relative": 212.85461,
+          "absolute": "2026-09-22T09:38:43.475Z"
+        },
+        "end_timestamp": {
+          "relative": 212.93462,
+          "absolute": "2026-09-22T09:38:43.555Z"
+        }
+      },
+      {
+        "text": "has",
+        "start_timestamp": {
+          "relative": 213.01462,
+          "absolute": "2026-09-22T09:38:43.635Z"
+        },
+        "end_timestamp": {
+          "relative": 213.09462,
+          "absolute": "2026-09-22T09:38:43.715Z"
+        }
+      },
+      {
+        "text": "more",
+        "start_timestamp": {
+          "relative": 213.09462,
+          "absolute": "2026-09-22T09:38:43.715Z"
+        },
+        "end_timestamp": {
+          "relative": 213.1746,
+          "absolute": "2026-09-22T09:38:43.795Z"
+        }
+      },
+      {
+        "text": "time",
+        "start_timestamp": {
+          "relative": 213.25461,
+          "absolute": "2026-09-22T09:38:43.875Z"
+        },
+        "end_timestamp": {
+          "relative": 213.33461,
+          "absolute": "2026-09-22T09:38:43.955Z"
+        }
+      },
+      {
+        "text": "before",
+        "start_timestamp": {
+          "relative": 213.57462,
+          "absolute": "2026-09-22T09:38:44.195Z"
+        },
+        "end_timestamp": {
+          "relative": 213.65462,
+          "absolute": "2026-09-22T09:38:44.275Z"
+        }
+      },
+      {
+        "text": "you",
+        "start_timestamp": {
+          "relative": 214.21461,
+          "absolute": "2026-09-22T09:38:44.835Z"
+        },
+        "end_timestamp": {
+          "relative": 214.29462,
+          "absolute": "2026-09-22T09:38:44.915Z"
+        }
+      },
+      {
+        "text": "friday",
+        "start_timestamp": {
+          "relative": 214.29462,
+          "absolute": "2026-09-22T09:38:44.915Z"
+        },
+        "end_timestamp": {
+          "relative": 214.45462,
+          "absolute": "2026-09-22T09:38:45.075Z"
+        }
+      },
+      {
+        "text": "review",
+        "start_timestamp": {
+          "relative": 214.5346,
+          "absolute": "2026-09-22T09:38:45.155Z"
+        },
+        "end_timestamp": {
+          "relative": 214.61461,
+          "absolute": "2026-09-22T09:38:45.235Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 200,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "mVpTQ4V41sdeZ9rHXTkOrbl5OvBXTQersr9A_miRzWs="
+        }
+      },
+      "is_host": false,
+      "platform": "mobile_app",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "even",
+        "start_timestamp": {
+          "relative": 216.51845,
+          "absolute": "2026-09-22T09:38:47.139Z"
+        },
+        "end_timestamp": {
+          "relative": 216.59845,
+          "absolute": "2026-09-22T09:38:47.219Z"
+        }
+      },
+      {
+        "text": "better",
+        "start_timestamp": {
+          "relative": 216.59845,
+          "absolute": "2026-09-22T09:38:47.219Z"
+        },
+        "end_timestamp": {
+          "relative": 217.55844,
+          "absolute": "2026-09-22T09:38:48.179Z"
+        }
+      },
+      {
+        "text": "dakshan",
+        "start_timestamp": {
+          "relative": 217.55844,
+          "absolute": "2026-09-22T09:38:48.179Z"
+        },
+        "end_timestamp": {
+          "relative": 217.87845,
+          "absolute": "2026-09-22T09:38:48.499Z"
+        }
+      },
+      {
+        "text": "talk",
+        "start_timestamp": {
+          "relative": 217.87845,
+          "absolute": "2026-09-22T09:38:48.499Z"
+        },
+        "end_timestamp": {
+          "relative": 217.87845,
+          "absolute": "2026-09-22T09:38:48.499Z"
+        }
+      },
+      {
+        "text": "soon",
+        "start_timestamp": {
+          "relative": 217.87845,
+          "absolute": "2026-09-22T09:38:48.499Z"
+        },
+        "end_timestamp": {
+          "relative": 217.95845,
+          "absolute": "2026-09-22T09:38:48.579Z"
+        }
+      }
+    ],
+    "language_code": "en"
+  },
+  {
+    "participant": {
+      "id": 100,
+      "name": "Shawn Madadha",
+      "extra_data": {
+        "google_meet": {
+          "static_participant_id": "XumLxVyCdj1ywcWXP0XPSMVs8h27Z1mJCkXfBVK3KLs="
+        }
+      },
+      "is_host": true,
+      "platform": "desktop",
+      "email": null
+    },
+    "words": [
+      {
+        "text": "you",
+        "start_timestamp": {
+          "relative": 221.05756,
+          "absolute": "2026-09-22T09:38:51.678Z"
+        },
+        "end_timestamp": {
+          "relative": 221.13756,
+          "absolute": "2026-09-22T09:38:51.758Z"
+        }
+      },
+      {
+        "text": "have",
+        "start_timestamp": {
+          "relative": 221.13756,
+          "absolute": "2026-09-22T09:38:51.758Z"
+        },
+        "end_timestamp": {
+          "relative": 221.21756,
+          "absolute": "2026-09-22T09:38:51.838Z"
+        }
+      },
+      {
+        "text": "toxin",
+        "start_timestamp": {
+          "relative": 221.21756,
+          "absolute": "2026-09-22T09:38:51.838Z"
+        },
+        "end_timestamp": {
+          "relative": 221.53755,
+          "absolute": "2026-09-22T09:38:52.158Z"
         }
       }
     ],
