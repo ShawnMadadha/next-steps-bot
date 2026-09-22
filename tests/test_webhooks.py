@@ -61,7 +61,10 @@ def test_status_changes_are_stored_once_per_webhook_id(tmp_path, monkeypatch):
                            prefix="svix").status_code == 200
         assert post_signed(client, status_body("bot.done", "done", bot_id="someone-elses-bot")).status_code == 200
     rows = store.list_status_changes("bot-1")
-    assert [(r["code"], r["sub_code"]) for r in rows] == [("in_call_recording", None), ("call_ended", "bot_kicked_from_call")]
+    assert [(r["code"], r["sub_code"]) for r in rows] == [("in_call_recording", ""), ("call_ended", "bot_kicked_from_call")]
+    with TestClient(app) as client:  # the same status again, from the bot object, is not stored twice
+        assert post_signed(client, body).status_code == 200
+    assert len(store.list_status_changes("bot-1")) == 2
     assert store.get_bot("bot-1")["ended"] == 0
     assert store.list_status_changes("someone-elses-bot") == []
 

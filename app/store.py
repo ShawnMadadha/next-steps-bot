@@ -112,10 +112,11 @@ def mark_post_meeting_done(bot_id):
 # status changes
 
 def add_status_change(bot_id, code, sub_code, created_at):
+    # Empty string rather than NULL: SQLite treats NULLs as distinct, which would let the same event in twice.
     with db() as conn:
         conn.execute(
             "INSERT OR IGNORE INTO status_changes (bot_id, code, sub_code, created_at) VALUES (?, ?, ?, ?)",
-            (bot_id, code, sub_code, created_at),
+            (bot_id, code, sub_code or "", created_at),
         )
 
 

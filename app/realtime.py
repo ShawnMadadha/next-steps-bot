@@ -80,7 +80,9 @@ def find_match(found, existing):
     for other in existing:
         if other["owner"].lower() != found["owner"].lower():
             continue
-        if SequenceMatcher(None, other["action"].lower(), found["action"].lower()).ratio() <= MATCH_RATIO:
+        a, b = other["action"].lower(), found["action"].lower()
+        # Live fragments are shorter than the full transcript's version of the same promise, so containment counts too.
+        if SequenceMatcher(None, a, b).ratio() <= MATCH_RATIO and a not in b and b not in a:
             continue
         # Same action with a different due date is a revision ("Thursday, actually Wednesday"), not the same promise.
         if other["due"] and found["due"] and _due(other["due"]) != _due(found["due"]):

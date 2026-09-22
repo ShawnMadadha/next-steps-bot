@@ -149,6 +149,9 @@ def test_fuzzy_match():
     assert realtime.find_match({"owner": "Shawn", "action": "send the signed order form", "due": "Wednesday"}, existing) is None
     assert realtime.find_match({"owner": "Priya", "action": "send the signed order form", "due": "Thursday"}, existing) is None
     assert realtime.find_match({"owner": "Shawn", "action": "book a reference call", "due": None}, existing) is None
+    short = [{"owner": "Shawn", "action": "send the MSA", "due": "Wednesday"}]
+    assert realtime.find_match({"owner": "Shawn", "action": "send the MSA to your legal team", "due": "Wednesday"}, short) is short[0]
+    assert realtime.find_match({"owner": "Shawn", "action": "send the MSA to your legal team", "due": "Thursday"}, short) is None
 
 
 def test_near_duplicate_commitment_is_not_added_twice(tmp_path, monkeypatch):

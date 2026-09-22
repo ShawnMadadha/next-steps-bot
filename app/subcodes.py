@@ -13,6 +13,7 @@ CODES = {
     "recording_permission_denied": "Recording permission denied",
     "in_call_recording": "In the call and recording",
     "call_ended": "Call ended",
+    "recording_done": "Recording done",
     "done": "Done, media uploaded",
     "fatal": "Failed",
     "breakout_room_entered": "Entered a breakout room",
