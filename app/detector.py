@@ -63,7 +63,8 @@ def _commitment(item):
 
 
 # DRY_RUN=1: a regex stand-in so the whole pipeline runs with no model key. It is a stand-in, not a parser.
-STUB_CUE = re.compile(r"\b(I'll|I will|we'll|we will|let me)\s+(.+?)(?:[.!?]|$)", re.IGNORECASE)
+# Stops at punctuation or a conjunction, because low latency transcripts arrive with no punctuation at all.
+STUB_CUE = re.compile(r"\b(I'll|I will|we'll|we will|let me)\s+(.+?)(?:[.!?]| and | but | so | or | then |$)", re.IGNORECASE)
 STUB_DUE = re.compile(
     r"\b(by (?:end of )?(?:the |next )?(?:day|week|month|monday|tuesday|wednesday|thursday|friday|eod|eow)"
     r"|tomorrow|next week)\b",

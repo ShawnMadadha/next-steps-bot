@@ -80,6 +80,9 @@ def post_meeting_pass(bot_id):
     if transcript is None:
         return
 
+    # The download merges a speaker turn into one utterance while the live feed split it on pauses, so the two
+    # never line up. The page keeps the live transcript; the download only fills in when the live path got nothing.
+    backfill = not store.list_utterances(bot_id)
     utterances = []
     for entry in transcript:
         words = entry.get("words") or []
@@ -89,8 +92,8 @@ def post_meeting_pass(bot_id):
         participant_id = -1 if participant.get("id") is None else participant["id"]
         speaker = participant.get("name") or f"Participant {participant_id}"
         text = " ".join(w["text"] for w in words).strip()
-        # Backfill anything the live path never saw. The unique index makes this a no-op for the rest.
-        store.add_utterance(bot_id, participant_id, speaker, text, words[0]["start_timestamp"]["relative"])
+        if backfill:
+            store.add_utterance(bot_id, participant_id, speaker, text, words[0]["start_timestamp"]["relative"])
         utterances.append({"speaker": speaker, "text": text})
 
     existing = store.list_commitments(bot_id)
