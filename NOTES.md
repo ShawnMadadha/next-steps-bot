@@ -10,7 +10,7 @@ One line per thing about the Recall API or docs that was confusing, missing, or 
 - Status change webhooks call the timestamp `updated_at`; the same entry in the bot object's `status_changes[]` is `created_at`. Stored here as `created_at`.
 - Retry policy differs. Real-time webhooks retry 60 times, 1 second apart, then the endpoint is marked failed with no manual retry. Dashboard webhooks retry with backoff for 24 hours.
 - Dashboard webhooks time out after 15 seconds. Respond first, do the work in a background task.
-- `recallai_streaming` defaults to `prioritize_accuracy`, which runs an async model under the hood and batches utterances. `prioritize_low_latency` gives 1 to 3 second utterances but only supports `language_code: en`.
+- `recallai_streaming` defaults to `prioritize_accuracy`, which runs an async model under the hood and delays utterances. `prioritize_low_latency` gives 1 to 3 second utterances but only supports `language_code: en`.
 - The transcript download schema (participant + words per utterance) is the same shape as the live `data.data` object, so a downloaded transcript replays as live events unchanged.
 - unverified: The transcript download URL lives at `recordings[].media_shortcuts.transcript.data.download_url`, is null until the recording is done, and is pre-signed (no Authorization header).
 - `meeting_url` on a bot response is an object, not a string. `meeting_url.platform` is one of google_meet, zoom, microsoft_teams, microsoft_teams_live, webex, goto_meeting. It is cleared a few days after the call.
