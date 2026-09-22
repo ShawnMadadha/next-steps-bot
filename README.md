@@ -19,7 +19,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 cp .env.example .env
 ```
 
-1. Fill in `.env`: Recall API key, workspace verification secret, Anthropic key, a random `RT_TOKEN`, and your public URL. A static ngrok domain works: `ngrok http 8000`.
+1. Fill in `.env`: Recall API key, workspace verification secret, Anthropic key, a random `RT_TOKEN`, and your public URL. A static ngrok domain works: `ngrok http 8000`. For Slack, either a bot token in `SLACK_BOT_TOKEN` with the channel id in `SLACK_CHANNEL`, or an incoming webhook URL in `SLACK_WEBHOOK_URL`.
 2. In the Recall dashboard, add a webhook endpoint at `PUBLIC_URL/webhooks/recall` subscribed to the `bot.*` status events plus `recording.done` and `transcript.done`. Real-time transcript events need no dashboard setup; the create bot call points them at `PUBLIC_URL/rt/`.
 3. Start it:
 

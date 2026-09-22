@@ -18,23 +18,50 @@ def test_dry_run_prints_instead_of_posting(monkeypatch, capsys):
     assert "dry run" in out and "Follow-up from Shawn: send the DPA, due Thursday" in out
 
 
-def test_posts_the_draft_to_slack(monkeypatch):
+def test_posts_the_draft_to_slack_by_webhook(monkeypatch):
     monkeypatch.setenv("DRY_RUN", "0")
+    monkeypatch.delenv("SLACK_BOT_TOKEN", raising=False)
     monkeypatch.setenv("SLACK_WEBHOOK_URL", "https://hooks.slack.test/abc")
     sent = {}
 
-    def fake_post(url, json, timeout):
-        sent.update(url=url, json=json)
+    def fake_post(url, **kwargs):
+        sent.update(url=url, **kwargs)
         return httpx.Response(200, text="ok")
 
     monkeypatch.setattr(httpx, "post", fake_post)
     actions.send_followup(COMMITMENT)
-    assert sent["url"] == "https://hooks.slack.test/abc"
+    assert sent["url"] == "https://hooks.slack.test/abc" and "headers" not in sent
     assert sent["json"]["text"].endswith(COMMITMENT["followup_draft"])
+
+
+def test_posts_the_draft_to_slack_by_bot_token(monkeypatch):
+    monkeypatch.setenv("DRY_RUN", "0")
+    monkeypatch.setenv("SLACK_BOT_TOKEN", "xoxb-test")
+    monkeypatch.setenv("SLACK_CHANNEL", "C123")
+    monkeypatch.setenv("SLACK_WEBHOOK_URL", "https://hooks.slack.test/abc")  # ignored when a token is set
+    sent = {}
+
+    def fake_post(url, **kwargs):
+        sent.update(url=url, **kwargs)
+        return httpx.Response(200, json={"ok": True})
+
+    monkeypatch.setattr(httpx, "post", fake_post)
+    actions.send_followup(COMMITMENT)
+    assert sent["url"] == "https://slack.com/api/chat.postMessage"
+    assert sent["headers"]["Authorization"] == "Bearer xoxb-test"
+    assert sent["json"]["channel"] == "C123" and sent["json"]["text"].startswith("Follow-up from Shawn: send the DPA, due Thursday")
+
+    monkeypatch.setattr(httpx, "post", lambda url, **k: httpx.Response(200, json={"ok": False, "error": "not_in_channel"}))
+    try:
+        actions.send_followup(COMMITMENT)
+        assert False, "expected RuntimeError"
+    except RuntimeError as e:
+        assert "not_in_channel" in str(e)
 
 
 def test_slack_errors_are_readable(monkeypatch):
     monkeypatch.setenv("DRY_RUN", "0")
+    monkeypatch.delenv("SLACK_BOT_TOKEN", raising=False)
     monkeypatch.delenv("SLACK_WEBHOOK_URL", raising=False)
     try:
         actions.send_followup(COMMITMENT)

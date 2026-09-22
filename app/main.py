@@ -11,6 +11,7 @@ from app import actions, realtime, recall, store, subcodes, webhooks
 
 load_dotenv()
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
+logging.getLogger("httpx").setLevel(logging.WARNING)  # httpx logs full request URLs, and a Slack webhook URL is a secret
 
 PLATFORMS = {
     "google_meet": "Google Meet",
