@@ -27,3 +27,28 @@ def test_dry_run_stub(monkeypatch):
     assert live[0]["followup_draft"] is None
     post = detector.detect(utterances, "post_meeting")
     assert post[0]["followup_draft"].count("\n") == 1
+
+
+def test_stub_skips_requirements_and_meta_talk(monkeypatch):
+    monkeypatch.setenv("DRY_RUN", "1")
+    utterances = [
+        {"speaker": "Priya", "text": "We'll need SSO before anyone logs in."},
+        {"speaker": "Shawn", "text": "Let me check that with finance."},
+        {"speaker": "Shawn", "text": "Actually, let me revise that. I'll send the deck tomorrow."},
+    ]
+    assert [c["action"] for c in detector.detect(utterances, "live")] == ["send the deck tomorrow"]
+
+
+def test_stub_drops_the_earlier_version_of_a_revised_promise(monkeypatch):
+    monkeypatch.setenv("DRY_RUN", "1")
+    utterances = [
+        {"speaker": "Shawn", "text": "I'll send the redlined DPA to your legal team by Thursday."},
+        {"speaker": "Shawn", "text": "I'll set up a reference call next week."},
+        {"speaker": "Priya", "text": "I'll send the DPA to our CFO."},
+        {"speaker": "Shawn", "text": "Actually, I'll send the DPA by Wednesday instead."},
+    ]
+    live = [c["action"] for c in detector.detect(utterances, "live")]
+    assert live == ["send the redlined DPA to your legal team by Thursday", "set up a reference call next week",
+                    "send the DPA to our CFO", "send the DPA by Wednesday instead"]
+    post = [c["action"] for c in detector.detect(utterances, "post_meeting")]
+    assert post == ["set up a reference call next week", "send the DPA to our CFO", "send the DPA by Wednesday instead"]

@@ -62,23 +62,28 @@ def _commitment(item):
     }
 
 
-# DRY_RUN=1: a regex stand-in so the whole pipeline runs with no model key.
+# DRY_RUN=1: a regex stand-in so the whole pipeline runs with no model key. It is a stand-in, not a parser.
 STUB_CUE = re.compile(r"\b(I'll|I will|we'll|we will|let me)\s+(.+?)(?:[.!?]|$)", re.IGNORECASE)
 STUB_DUE = re.compile(
     r"\b(by (?:end of )?(?:the |next )?(?:day|week|month|monday|tuesday|wednesday|thursday|friday|eod|eow)"
     r"|tomorrow|next week)\b",
     re.IGNORECASE,
 )
+STUB_SKIP = ("need", "revise", "check that")  # requirements and meta talk, not promises
 
 
 def _stub(utterances, mode):
     found = []
     for u in utterances:
-        for m in STUB_CUE.finditer(u["text"].replace("’", "'")):
-            due = STUB_DUE.search(m.group(2))
+        text = u["text"].replace("\u2019", "'")
+        for m in STUB_CUE.finditer(text):
+            action = m.group(2).strip()
+            if action.lower().startswith(STUB_SKIP):
+                continue
+            due = STUB_DUE.search(action)
             c = {
                 "owner": u["speaker"],
-                "action": m.group(2).strip(),
+                "action": action,
                 "due": due.group(0) if due else None,
                 # A first person promise scores 0.9; "let me" is softer and lands in the unsure band.
                 "confidence": 0.6 if m.group(1).lower() == "let me" else 0.9,
@@ -86,6 +91,13 @@ def _stub(utterances, mode):
                 "followup_draft": None,
             }
             if mode == "post_meeting":
-                c["followup_draft"] = f"Following up on our call: I'll {c['action']}.\nShout if anything changes on your side."
+                c["followup_draft"] = f"Following up on our call: I'll {action}.\nShout if anything changes on your side."
+                if re.search(r"\b(instead|revise)", text, re.IGNORECASE):
+                    # A revision replaces the earlier promise from the same person that shares a distinctive word.
+                    found = [e for e in found if e["owner"] != c["owner"] or not _keywords(e["action"]) & _keywords(action)]
             found.append(c)
     return found
+
+
+def _keywords(action):
+    return {w.lower() for w in re.findall(r"[A-Za-z]+", action) if len(w) >= 5 or (w.isupper() and len(w) > 1)}

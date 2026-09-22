@@ -80,10 +80,11 @@ def test_post_meeting_pass_reconciles_live_commitments(tmp_path, monkeypatch):
     fresh(tmp_path, monkeypatch)
     monkeypatch.setenv("RECALL_WEBHOOK_SECRET", SECRET)
     store.add_bot("replay-1", f"replay:{ROOT / 'fixtures' / 'call.json'}", "Replay")
-    # Two utterances arrive live (one unsure, one proposed commitment); the rest of the call is "missed" live.
+    # Three utterances arrive live (unsure, proposed, proposed); the rest of the call is "missed" live.
     realtime.handle_event(fixture_event(0, bot_id="replay-1"))
-    realtime.handle_event(fixture_event(2, bot_id="replay-1"))
-    assert [c["status"] for c in store.list_commitments("replay-1")] == ["unsure", "proposed"]
+    realtime.handle_event(fixture_event(2, bot_id="replay-1"))  # DPA by Thursday, revised to Wednesday later in the call
+    realtime.handle_event(fixture_event(6, bot_id="replay-1"))  # SSO setup guide tomorrow
+    assert [c["status"] for c in store.list_commitments("replay-1")] == ["unsure", "proposed", "proposed"]
 
     with TestClient(app) as client:
         assert post_signed(client, status_body("recording.done", "done", bot_id="replay-1")).status_code == 200
@@ -95,9 +96,10 @@ def test_post_meeting_pass_reconciles_live_commitments(tmp_path, monkeypatch):
     rows = store.list_commitments("replay-1")
     assert len(rows) == before  # the second event was a no-op
     assert rows[0]["status"] == "unsure"
-    assert (rows[1]["status"], rows[1]["sent_via"]) == ("sent", "auto")  # confirmed, then sent by the gate
-    assert {r["status"] for r in rows[2:]} == {"post_meeting"}
-    assert all(r["followup_draft"] for r in rows)
+    assert (rows[1]["status"], rows[1]["sent_via"], rows[1]["followup_draft"]) == ("superseded", None, None)
+    assert (rows[2]["status"], rows[2]["sent_via"]) == ("sent", "auto")  # confirmed, then sent by the gate
+    assert {r["status"] for r in rows[3:]} == {"post_meeting"}
+    assert all(r["followup_draft"] for r in rows if r["status"] != "superseded")
     assert len(store.list_utterances("replay-1")) == 14  # backfilled from the transcript
 
 

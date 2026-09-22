@@ -57,7 +57,7 @@ def test_slack_errors_are_readable(monkeypatch):
 def finished_replay_bot(client):
     store.add_bot("replay-1", f"replay:{ROOT / 'fixtures' / 'call.json'}", "Replay")
     realtime.handle_event(fixture_event(0, bot_id="replay-1"))  # unsure
-    realtime.handle_event(fixture_event(2, bot_id="replay-1"))  # proposed
+    realtime.handle_event(fixture_event(6, bot_id="replay-1"))  # proposed, found again by the full pass
     assert post_signed(client, status_body("recording.done", "done", bot_id="replay-1")).status_code == 200
 
 
