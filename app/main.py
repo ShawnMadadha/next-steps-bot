@@ -7,7 +7,7 @@ from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 
-from app import realtime, recall, store, subcodes, webhooks
+from app import actions, realtime, recall, store, subcodes, webhooks
 
 load_dotenv()
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
@@ -69,6 +69,30 @@ def bot_page(request: Request, bot_id: str):
         "commitments": commitments,
         "utterances": store.list_utterances(bot_id),
     })
+
+
+@app.post("/commitments/{commitment_id}/approve")
+def approve(commitment_id: int):
+    c = store.get_commitment(commitment_id)
+    if c is None or not c["followup_draft"]:
+        raise HTTPException(status_code=404)
+    if c["status"] != "sent":
+        try:
+            actions.send_followup(c)
+        except RuntimeError as e:
+            raise HTTPException(status_code=502, detail=str(e))
+        store.set_status(commitment_id, "sent", "rep")
+    return RedirectResponse(f"/bots/{c['bot_id']}", status_code=303)
+
+
+@app.post("/commitments/{commitment_id}/dismiss")
+def dismiss(commitment_id: int):
+    c = store.get_commitment(commitment_id)
+    if c is None:
+        raise HTTPException(status_code=404)
+    if c["status"] != "sent":
+        store.set_status(commitment_id, "dismissed")
+    return RedirectResponse(f"/bots/{c['bot_id']}", status_code=303)
 
 
 def status_text(c):

@@ -95,7 +95,7 @@ def test_post_meeting_pass_reconciles_live_commitments(tmp_path, monkeypatch):
     rows = store.list_commitments("replay-1")
     assert len(rows) == before  # the second event was a no-op
     assert rows[0]["status"] == "unsure"
-    assert rows[1]["status"] == "confirmed"
+    assert (rows[1]["status"], rows[1]["sent_via"]) == ("sent", "auto")  # confirmed, then sent by the gate
     assert {r["status"] for r in rows[2:]} == {"post_meeting"}
     assert all(r["followup_draft"] for r in rows)
     assert len(store.list_utterances("replay-1")) == 14  # backfilled from the transcript

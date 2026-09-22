@@ -61,6 +61,12 @@
 {% for c in commitments if c.followup_draft %}
 <p><strong>{{ c.owner }}</strong>: {{ c.action }} <span class="status status-{{ c.status }}">{{ c.status_text }}</span></p>
 <pre class="draft">{{ c.followup_draft }}</pre>
+{% if c.status not in ("sent", "dismissed") %}
+<p>
+  <form class="inline" method="post" action="/commitments/{{ c.id }}/approve"><button>Approve and send</button></form>
+  <form class="inline" method="post" action="/commitments/{{ c.id }}/dismiss"><button>Dismiss</button></form>
+</p>
+{% endif %}
 {% else %}
 <p class="muted">No follow-ups drafted.</p>
 {% endfor %}

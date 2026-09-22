@@ -8,7 +8,7 @@ from pathlib import Path
 
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Request
 
-from app import detector, recall, store
+from app import actions, detector, recall, store
 from app.realtime import find_match, status_for
 
 log = logging.getLogger(__name__)
@@ -105,6 +105,17 @@ def post_meeting_pass(bot_id):
     for c in store.list_commitments(bot_id):
         if c["status"] in ("confirmed", "post_meeting", "unsure") and not c["followup_draft"]:
             store.set_followup(c["id"], template_draft(c))
+    # The gate. Confirmed means both passes saw it and it cleared the threshold, so the app acts.
+    # Unsure and post_meeting ones were only seen once or scored low, so a rep decides on the page.
+    threshold = float(os.environ.get("CONFIDENCE_THRESHOLD", "0.8"))
+    for c in store.list_commitments(bot_id):
+        if c["status"] == "confirmed" and c["confidence"] >= threshold:
+            try:
+                actions.send_followup(c)
+            except RuntimeError:
+                log.exception("follow-up %s not sent; it stays on the page for a rep", c["id"])
+                continue
+            store.set_status(c["id"], "sent", "auto")
     store.mark_post_meeting_done(bot_id)
     log.info("post meeting pass done for bot %s", bot_id)
 
