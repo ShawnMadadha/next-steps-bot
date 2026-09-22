@@ -43,6 +43,20 @@ Post-meeting pass. `recording.done` arrives on the dashboard webhook, signature 
 
 Follow-ups. Each confirmed or post-meeting commitment gets a two line draft from the owner's point of view. Confirmed ones at or above the threshold are posted to Slack on their own and marked sent. Unsure and post-meeting ones wait on the page with approve and dismiss buttons.
 
+## What it looks like
+
+The index lists every bot with its platform, current status and commitment count.
+
+![Index page with one live bot](docs/screenshots/01-index.png)
+
+Mid call. The transcript is arriving in fragments. "I'll send over the red lined MSA to your legal team by Thursday" is already a proposed commitment at 0.95, and "we'll need SSO" was left alone because it is a requirement, not a promise.
+
+![Bot page during the call: status timeline, live commitments, transcript](docs/screenshots/02-live-commitments.png)
+
+After the call. The Thursday version is superseded, the Wednesday version was confirmed by the full pass and posted to Slack on its own, and the low confidence items wait with drafts and approve or dismiss buttons.
+
+![Bot page after the call: superseded, sent, unsure, follow-ups](docs/screenshots/03-after-the-call.png)
+
 ## Replay a recorded call
 
 ```bash
@@ -76,7 +90,7 @@ The first version confirmed every live commitment when the call ended, so a revi
 
 The dry run stub treated "we'll need SSO before anyone logs in" as a promise from the customer. It's a requirement. The model gets this right and the regex didn't, so the stub now skips anything starting with "need".
 
-The first real model run sent nothing. Both passes found the same promises, but the full transcript pass rephrased them, so the string matcher decided they were different commitments, superseded the live ones, and left the new wording waiting for a rep. The post-meeting call is now shown the live commitments and told to keep their wording when it's the same promise. The matcher stays a dumb string ratio on purpose; the model does the semantic part.
+The first real model run sent nothing. Both passes found the same promises, but the full transcript pass rephrased them, so the string matcher decided they were different commitments, superseded the live ones, and left the new wording waiting for a rep. The post-meeting call is now shown the live commitments and told to keep their wording when it's the same promise, and because a live fragment is usually a shorter version of the full transcript's wording, the matcher also accepts one action contained in the other. Otherwise it stays a dumb string ratio on purpose; the model does the semantic part.
 
 ## Taking this to production
 
