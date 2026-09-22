@@ -26,7 +26,7 @@ def create_bot(meeting_url):
         "bot_name": "Next Steps",
         "metadata": {"app": "next-steps"},
         "recording_config": {
-            # Low latency mode sends utterances 1 to 3 seconds after they are spoken; the default mode batches.
+            # Low latency mode sends utterances 1 to 3 seconds after they are spoken; the default mode delays them by minutes.
             "transcript": {"provider": {"recallai_streaming": {"mode": "prioritize_low_latency", "language_code": "en"}}},
             "realtime_endpoints": [{"type": "webhook", "url": rt_url, "events": ["transcript.data"]}],
         },
