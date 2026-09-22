@@ -118,7 +118,7 @@ def main():
         resp.raise_for_status()
 
     if args.finish:
-        time.sleep(1)  # let the last live detection finish before the post-meeting pass reconciles
+        time.sleep(5)  # let the last live detections finish (a model call takes a second or two) before the full pass
         post_signed(args.url, status_event(args.bot_id, "bot.call_ended", "call_ended", "call_ended_by_host"), secret)
         post_signed(args.url, status_event(args.bot_id, "bot.done", "done"), secret)
         post_signed(args.url, status_event(args.bot_id, "recording.done", "done"), secret)

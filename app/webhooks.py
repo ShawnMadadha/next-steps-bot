@@ -9,7 +9,7 @@ from pathlib import Path
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Request
 
 from app import actions, detector, recall, store
-from app.realtime import find_match, status_for
+from app.realtime import detect_lock, find_match, status_for
 
 log = logging.getLogger(__name__)
 router = APIRouter()
@@ -96,6 +96,13 @@ def post_meeting_pass(bot_id):
             store.add_utterance(bot_id, participant_id, speaker, text, words[0]["start_timestamp"]["relative"])
         utterances.append({"speaker": speaker, "text": text})
 
+    with detect_lock:
+        reconcile(bot_id, utterances)
+    store.mark_post_meeting_done(bot_id)
+    log.info("post meeting pass done for bot %s", bot_id)
+
+
+def reconcile(bot_id, utterances):
     existing = store.list_commitments(bot_id)
     matched = set()
     for found in detector.detect(utterances, "post_meeting"):
@@ -127,8 +134,6 @@ def post_meeting_pass(bot_id):
                 log.exception("follow-up %s not sent; it stays on the page for a rep", c["id"])
                 continue
             store.set_status(c["id"], "sent", "auto")
-    store.mark_post_meeting_done(bot_id)
-    log.info("post meeting pass done for bot %s", bot_id)
 
 
 def fetch_transcript(bot):

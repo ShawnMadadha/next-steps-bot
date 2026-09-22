@@ -15,8 +15,9 @@ router = APIRouter()
 WINDOW = 8          # utterances the model sees on each live call
 MATCH_RATIO = 0.8   # SequenceMatcher ratio above which two actions are the same commitment
 
-# One live detection at a time, so two events for the same bot cannot both add the same commitment.
-_lock = threading.Lock()
+# One detection at a time, live or post-meeting, so two events cannot both add the same commitment and the
+# full pass reconciles against everything the live path found.
+detect_lock = threading.Lock()
 
 
 @router.post("/rt")
@@ -53,7 +54,7 @@ def handle_event(body):
         return  # Recall retried an event we already have
     if not detector.has_cue(text):
         return
-    with _lock:
+    with detect_lock:
         window = store.recent_utterances(bot_id, WINDOW)
         existing = store.list_commitments(bot_id)
         for found in detector.detect(window, "live"):
