@@ -7,7 +7,10 @@ BASE_URL = "https://us-west-2.recall.ai/api/v1"
 
 
 def _headers():
-    return {"Authorization": f"Token {os.environ['RECALL_API_KEY']}"}
+    key = os.environ.get("RECALL_API_KEY", "").strip()
+    if not key:
+        raise RuntimeError("RECALL_API_KEY is not set in .env (restart the app after editing .env)")
+    return {"Authorization": f"Token {key}"}
 
 
 def _json(resp):
