@@ -57,6 +57,10 @@ After the call. The Thursday version is superseded, the Wednesday version was co
 
 ![Bot page after the call: superseded, sent, unsure, follow-ups](docs/screenshots/03-after-the-call.png)
 
+The Slack post the app sent on its own for the confirmed commitment.
+
+![Slack channel with the follow-up posted by the bot](docs/screenshots/04-slack.png)
+
 ## Replay a recorded call
 
 ```bash
