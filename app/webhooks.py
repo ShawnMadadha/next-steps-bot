@@ -51,15 +51,18 @@ def verify(headers, raw):
     msg_id = headers.get("webhook-id") or headers.get("svix-id")
     timestamp = headers.get("webhook-timestamp") or headers.get("svix-timestamp")
     signatures = headers.get("webhook-signature") or headers.get("svix-signature")
-    if not secret.startswith("whsec_") or not (msg_id and timestamp and signatures):
+    if not secret.startswith("whsec_"):
+        log.warning("webhook rejected: RECALL_WEBHOOK_SECRET is not a whsec_ value")
+        return False
+    if not (msg_id and timestamp and signatures):
+        log.warning("webhook rejected: no signature headers (create a workspace secret in the Recall dashboard)")
         return False
     expected = sign(secret, msg_id, timestamp, raw)
     # One "v1,<sig>" per active secret; there are two for a day after a rotation.
-    return any(
-        hmac.compare_digest(expected, s.split(",", 1)[1])
-        for s in signatures.split()
-        if s.startswith("v1,")
-    )
+    if any(hmac.compare_digest(expected, s.split(",", 1)[1]) for s in signatures.split() if s.startswith("v1,")):
+        return True
+    log.warning("webhook rejected: signature does not match RECALL_WEBHOOK_SECRET")
+    return False
 
 
 def sign(secret, msg_id, timestamp, raw):
