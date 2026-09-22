@@ -5,8 +5,9 @@ from app import detector
 
 def test_parse_strips_code_fences():
     out = detector.parse('```json\n[{"owner": "Shawn", "action": "send the DPA", "confidence": 0.9}]\n```')
-    assert out == [{"owner": "Shawn", "action": "send the DPA", "due": None, "confidence": 0.9,
+    assert out == [{"owner": "Shawn", "owner_id": None, "action": "send the DPA", "due": None, "confidence": 0.9,
                     "quote": "", "followup_draft": None}]
+    assert detector.parse('[{"owner": "Shawn", "owner_id": 100, "action": "send the DPA", "confidence": 0.9}]')[0]["owner_id"] == 100
 
 
 def test_parse_malformed_responses_return_nothing():
@@ -68,12 +69,20 @@ def test_post_meeting_prompt_lists_the_live_commitments(monkeypatch):
 
     monkeypatch.setattr(detector.anthropic, "Anthropic", lambda: SimpleNamespace(messages=FakeMessages()))
     utterances = [{"speaker": "Shawn", "text": "I'll send the docs tomorrow."}]
-    live = [{"owner": "Shawn", "action": "send the docs", "due": "tomorrow"}, {"owner": "Priya", "action": "loop in procurement", "due": None}]
+    live = [{"owner": "Shawn", "owner_id": 100, "action": "send the docs", "due": "tomorrow"}, {"owner": "Priya", "action": "loop in procurement", "due": None}]
     out = detector.detect(utterances, "post_meeting", known=live)
     assert out[0]["action"] == "send the docs"
     content = calls[0]["messages"][0]["content"]
     assert content.startswith("Mode: post_meeting\n\nTranscript:\nShawn: I'll send the docs tomorrow.")
-    assert "- Shawn | send the docs | tomorrow" in content and "- Priya | loop in procurement | no due" in content
+    assert "- Shawn [100] | send the docs | tomorrow" in content and "- Priya | loop in procurement | no due" in content
     assert "Commitments the live pass already found" in calls[0]["system"] or "live pass already found" in calls[0]["system"]
     detector.detect(utterances, "live")
     assert "already found" not in calls[1]["messages"][0]["content"]
+
+
+def test_stub_reads_the_participant_id_from_the_speaker_label(monkeypatch):
+    monkeypatch.setenv("DRY_RUN", "1")
+    out = detector.detect([{"speaker": "Shawn Madadha [200]", "text": "I'll send the deck tomorrow."}], "live")
+    assert (out[0]["owner"], out[0]["owner_id"]) == ("Shawn Madadha", 200)
+    out = detector.detect([{"speaker": "Priya", "text": "I'll send the deck tomorrow."}], "live")
+    assert (out[0]["owner"], out[0]["owner_id"]) == ("Priya", None)

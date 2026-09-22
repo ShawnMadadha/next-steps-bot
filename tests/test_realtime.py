@@ -149,6 +149,10 @@ def test_fuzzy_match():
     assert realtime.find_match({"owner": "Shawn", "action": "send the signed order form", "due": "Wednesday"}, existing) is None
     assert realtime.find_match({"owner": "Priya", "action": "send the signed order form", "due": "Thursday"}, existing) is None
     assert realtime.find_match({"owner": "Shawn", "action": "book a reference call", "due": None}, existing) is None
+    by_id = [{"owner": "Shawn", "owner_id": 100, "action": "send the deck", "due": None}]
+    assert realtime.find_match({"owner": "Shawn", "owner_id": 200, "action": "send the deck", "due": None}, by_id) is None
+    assert realtime.find_match({"owner": "S. Madadha", "owner_id": 100, "action": "send the deck", "due": None}, by_id) is by_id[0]
+    assert realtime.find_match({"owner": "Shawn", "action": "send the deck", "due": None}, by_id) is by_id[0]  # no id: by name
     short = [{"owner": "Shawn", "action": "send the MSA", "due": "Wednesday"}]
     assert realtime.find_match({"owner": "Shawn", "action": "send the MSA to your legal team", "due": "Wednesday"}, short) is short[0]
     assert realtime.find_match({"owner": "Shawn", "action": "send the MSA to your legal team", "due": "Thursday"}, short) is None
@@ -161,3 +165,15 @@ def test_near_duplicate_commitment_is_not_added_twice(tmp_path, monkeypatch):
     realtime.handle_event(event("I'll book a reference call next week.", start=15.0))
     actions = [r["action"] for r in store.list_commitments("bot-1")]
     assert actions == ["send the signed order form tomorrow", "book a reference call next week"]
+
+
+def test_two_participants_with_one_name_are_two_owners(tmp_path, monkeypatch):
+    fresh(tmp_path, monkeypatch)
+    realtime.handle_event(event("I'll send the deck tomorrow.", speaker="Shawn", participant_id=100, start=1.0))
+    realtime.handle_event(event("I'll send the deck tomorrow.", speaker="Shawn", participant_id=200, start=9.0))
+    realtime.handle_event(event("I'll send the deck tomorrow, promise.", speaker="Shawn", participant_id=200, start=15.0))
+    rows = store.list_commitments("bot-1")
+    assert [(r["owner"], r["owner_id"]) for r in rows] == [("Shawn", 100), ("Shawn", 200)]
+    with TestClient(app) as client:
+        page = client.get("/bots/bot-1").text
+    assert "Shawn (#100)" in page and "Shawn (#200)" in page

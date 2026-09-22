@@ -44,7 +44,7 @@
   {% for c in commitments %}
   <tr>
     <td>{{ loop.index }}</td>
-    <td>{{ c.owner }}</td>
+    <td>{{ c.owner_label }}</td>
     <td>{{ c.action }}</td>
     <td>{{ c.due or "" }}</td>
     <td><span class="status status-{{ c.status }}">{{ c.status_text }}</span></td>
@@ -60,7 +60,7 @@
 {% if bot.ended %}
 <h2>Follow-ups</h2>
 {% for c in commitments if c.followup_draft %}
-<p><strong>{{ c.owner }}</strong>: {{ c.action }} <span class="status status-{{ c.status }}">{{ c.status_text }}</span></p>
+<p><strong>{{ c.owner_label }}</strong>: {{ c.action }} <span class="status status-{{ c.status }}">{{ c.status_text }}</span></p>
 <pre class="draft">{{ c.followup_draft }}</pre>
 {% if c.status not in ("sent", "dismissed") %}
 <p>
@@ -75,7 +75,7 @@
 
 <h2>Transcript</h2>
 {% for u in utterances %}
-<p><span class="muted">{{ "%.0f"|format(u.start_ts) }}s</span> <strong>{{ u.speaker }}</strong>: {{ u.text }}</p>
+<p><span class="muted">{{ "%.0f"|format(u.start_ts) }}s</span> <strong>{{ u.speaker_label }}</strong>: {{ u.text }}</p>
 {% else %}
 <p class="muted">Waiting for the first utterance.</p>
 {% endfor %}

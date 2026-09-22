@@ -68,7 +68,7 @@ The Slack posts the app sent on its own for the two confirmed commitments.
 .venv/bin/python scripts/replay.py --speed 4 --finish
 ```
 
-The first command saves a finished bot's transcript as `fixtures/call.json`. Recall's download format is the same shape as the live event payload, so the second command can play it back through `/rt` at real pacing (`--speed 4` is four times faster) and, with `--finish`, send the end of call webhooks so the post-meeting pass and follow-ups run too. This is how I demo it without a live meeting.
+The first command saves a finished bot's transcript as `fixtures/call.json`. Recall's download format is the same shape as the live event payload, so the second command can play it back through `/rt` at real pacing (`--speed 4` is four times faster) and, with `--finish`, send the end of call webhooks so the post-meeting pass and follow-ups run too. This is how I demo it without a live meeting. The fixture is me playing both sides from two devices on the same account, so both speakers carry my name. Owners are keyed by participant id, not name, so a real call with two people splits them.
 
 ## Decisions I made
 
@@ -96,7 +96,7 @@ The dry run stub treated "we'll need SSO before anyone logs in" as a promise fro
 
 The first real model run sent nothing. Both passes found the same promises, but the full transcript pass rephrased them, so the string matcher decided they were different commitments, superseded the live ones, and left the new wording waiting for a rep. The post-meeting call is now shown the live commitments and told to keep their wording when it's the same promise, and because a live fragment is usually a shorter version of the full transcript's wording, the matcher also accepts one action contained in the other. Otherwise it stays a dumb string ratio on purpose; the model does the semantic part.
 
-The two person test call came back with every utterance attributed to the host, so the customer's promises showed up as mine, because the diarization flag was not set on the bot. One line in create_bot fixed it.
+The two person test call came back as one speaker. Half of that was the diarization flag, which was not set on the bot, so the low latency provider never switched streams. The other half was that I joined from two devices on one account, so both participants had my name and the app was keying owners by name. The flag fixed the streams; owners are now keyed by participant id.
 
 ## Taking this to production
 

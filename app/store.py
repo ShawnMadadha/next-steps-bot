@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS commitments (
     id INTEGER PRIMARY KEY,
     bot_id TEXT NOT NULL,
     owner TEXT NOT NULL,
+    owner_id INTEGER,
     action TEXT NOT NULL,
     due TEXT,
     confidence REAL NOT NULL,
@@ -68,6 +69,8 @@ def db():
 def init():
     with db() as conn:
         conn.executescript(SCHEMA)
+        if "owner_id" not in [row[1] for row in conn.execute("PRAGMA table_info(commitments)")]:
+            conn.execute("ALTER TABLE commitments ADD COLUMN owner_id INTEGER")  # databases from before owner ids
 
 
 # bots
@@ -159,9 +162,10 @@ def list_utterances(bot_id):
 def add_commitment(bot_id, c, status, followup_draft=None):
     with db() as conn:
         cur = conn.execute(
-            """INSERT INTO commitments (bot_id, owner, action, due, confidence, quote, status, followup_draft, created_at)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-            (bot_id, c["owner"], c["action"], c.get("due"), c["confidence"], c.get("quote"), status, followup_draft, now()),
+            """INSERT INTO commitments (bot_id, owner, owner_id, action, due, confidence, quote, status, followup_draft, created_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (bot_id, c["owner"], c.get("owner_id"), c["action"], c.get("due"), c["confidence"], c.get("quote"), status,
+             followup_draft, now()),
         )
         return cur.lastrowid
 

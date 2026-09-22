@@ -31,7 +31,7 @@ def detect(utterances, mode, known=()):
     if known:
         # The two passes are matched on action text, so the model is asked to keep the live wording for the same promise.
         content += "\n\nCommitments the live pass already found (owner | action | due):\n" + "\n".join(
-            f"- {c['owner']} | {c['action']} | {c['due'] or 'no due'}" for c in known)
+            f"- {c['owner']}{_bracket(c)} | {c['action']} | {c['due'] or 'no due'}" for c in known)
     try:
         response = anthropic.Anthropic().messages.create(
             model=os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5"),
@@ -44,6 +44,11 @@ def detect(utterances, mode, known=()):
         return []
     text = "".join(block.text for block in response.content if block.type == "text")
     return parse(text)
+
+
+def _bracket(c):
+    owner_id = c["owner_id"] if "owner_id" in c.keys() else None
+    return f" [{owner_id}]" if owner_id is not None else ""
 
 
 def parse(text):
@@ -59,6 +64,7 @@ def parse(text):
 def _commitment(item):
     return {
         "owner": str(item["owner"]).strip(),
+        "owner_id": int(item["owner_id"]) if item.get("owner_id") not in (None, "") else None,
         "action": str(item["action"]).strip(),
         "due": item.get("due") or None,
         "confidence": float(item["confidence"]),
@@ -76,6 +82,7 @@ STUB_DUE = re.compile(
     re.IGNORECASE,
 )
 STUB_SKIP = ("need", "revise", "check that")  # requirements and meta talk, not promises
+STUB_SPEAKER = re.compile(r"^(.*?)(?: \[(\d+)\])?$")
 
 
 def _stub(utterances, mode):
@@ -87,8 +94,10 @@ def _stub(utterances, mode):
             if action.lower().startswith(STUB_SKIP):
                 continue
             due = STUB_DUE.search(action)
+            name, pid = STUB_SPEAKER.match(u["speaker"]).groups()
             c = {
-                "owner": u["speaker"],
+                "owner": name,
+                "owner_id": int(pid) if pid else None,
                 "action": action,
                 "due": due.group(0) if due else None,
                 # A first person promise scores 0.9; "let me" is softer and lands in the unsure band.

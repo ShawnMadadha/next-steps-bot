@@ -34,7 +34,8 @@ Return JSON only. No prose before or after, no code fences. A JSON array, one ob
 
 [
   {
-    "owner": "speaker name exactly as it appears in the transcript",
+    "owner": "speaker name exactly as it appears in the transcript, without the bracketed number",
+    "owner_id": "the number in brackets after the speaker name, as an integer, or null if there is none",
     "action": "what they will do, short, no leading I'll or we'll",
     "due": "when, as spoken (e.g. Thursday, end of next week), or null",
     "confidence": 0.0 to 1.0,
@@ -42,6 +43,8 @@ Return JSON only. No prose before or after, no code fences. A JSON array, one ob
     "followup_draft": "post_meeting mode only, otherwise null"
   }
 ]
+
+Speaker labels end with a number in brackets, like `Shawn [100]`. That number identifies the speaker, because two people on a call can share a name. Return it as owner_id, and the name without the brackets as owner. The list of live commitments uses the same bracketed number.
 
 Confidence: 1.0 is an explicit first person promise with a concrete action. Go lower for vague, conditional, or third party items. Use 0.5 or below when it is probably just discussion.
 

@@ -55,7 +55,7 @@ def handle_event(body):
     if not detector.has_cue(text):
         return
     with detect_lock:
-        window = store.recent_utterances(bot_id, WINDOW)
+        window = [labeled(u) for u in store.recent_utterances(bot_id, WINDOW)]
         existing = store.list_commitments(bot_id)
         for found in detector.detect(window, "live"):
             status = status_for(found["confidence"])
@@ -75,10 +75,24 @@ def status_for(confidence):
     return None
 
 
+def labeled(u):
+    # "Shawn [100]": the model returns the number as owner_id, so two people with one name stay two people.
+    return {"speaker": f"{u['speaker']} [{u['participant_id']}]", "text": u["text"]}
+
+
+def same_owner(a, b):
+    """By participant id when both sides have one, by name otherwise."""
+    id_a = a["owner_id"] if "owner_id" in a.keys() else None
+    id_b = b["owner_id"] if "owner_id" in b.keys() else None
+    if id_a is not None and id_b is not None:
+        return id_a == id_b
+    return a["owner"].lower() == b["owner"].lower()
+
+
 def find_match(found, existing):
     """The stored commitment that says the same thing as `found`, or None."""
     for other in existing:
-        if other["owner"].lower() != found["owner"].lower():
+        if not same_owner(other, found):
             continue
         a, b = other["action"].lower(), found["action"].lower()
         # Live fragments are shorter than the full transcript's version of the same promise, so containment counts too.

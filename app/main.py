@@ -63,12 +63,20 @@ def bot_page(request: Request, bot_id: str):
         raise HTTPException(status_code=404)
     timeline = [{"created_at": s["created_at"], "text": subcodes.describe(s["code"], s["sub_code"])}
                 for s in store.list_status_changes(bot_id)]
-    commitments = [dict(c) | {"status_text": status_text(c)} for c in store.list_commitments(bot_id)]
+    rows = store.list_commitments(bot_id)
+    utterances = store.list_utterances(bot_id)
+    # Two participants with one display name get their participant id appended so the page can tell them apart.
+    ids_by_name = {}
+    for name, pid in [(c["owner"], c["owner_id"]) for c in rows] + [(u["speaker"], u["participant_id"]) for u in utterances]:
+        ids_by_name.setdefault(name, set()).add(pid)
+    def label(name, pid):
+        return f"{name} (#{pid})" if pid is not None and len(ids_by_name.get(name, ())) > 1 else name
+    commitments = [dict(c) | {"status_text": status_text(c), "owner_label": label(c["owner"], c["owner_id"])} for c in rows]
     return templates.TemplateResponse(request, "bot.html", {
         "bot": bot,
         "timeline": timeline,
         "commitments": commitments,
-        "utterances": store.list_utterances(bot_id),
+        "utterances": [dict(u) | {"speaker_label": label(u["speaker"], u["participant_id"])} for u in utterances],
     })
 
 

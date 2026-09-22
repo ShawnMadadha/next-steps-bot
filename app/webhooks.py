@@ -9,7 +9,7 @@ from pathlib import Path
 from fastapi import APIRouter, BackgroundTasks, HTTPException, Request
 
 from app import actions, detector, recall, store
-from app.realtime import detect_lock, find_match, status_for
+from app.realtime import detect_lock, find_match, labeled, status_for
 
 log = logging.getLogger(__name__)
 router = APIRouter()
@@ -94,7 +94,7 @@ def post_meeting_pass(bot_id):
         text = " ".join(w["text"] for w in words).strip()
         if backfill:
             store.add_utterance(bot_id, participant_id, speaker, text, words[0]["start_timestamp"]["relative"])
-        utterances.append({"speaker": speaker, "text": text})
+        utterances.append(labeled({"speaker": speaker, "participant_id": participant_id, "text": text}))
 
     with detect_lock:
         reconcile(bot_id, utterances)
