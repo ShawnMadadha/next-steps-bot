@@ -116,8 +116,8 @@ def reconcile(bot_id, utterances):
             new_id = store.add_commitment(bot_id, found, "post_meeting", found["followup_draft"])
             existing.append(store.get_commitment(new_id))
 
-    # Confirmed means both passes saw it. A live commitment the full pass did not return was revised or misheard,
-    # so it is superseded: no draft, never sent.
+    # Confirmed means both passes saw it. A live commitment the full pass did not return, proposed or unsure, was
+    # revised, misheard, or a fragment of one it did return, so it is superseded: no draft, never sent.
     store.confirm(bot_id, matched)
     store.supersede_unmatched(bot_id, matched)
     # Unsure ones get a draft too, so a rep can approve them from the page.

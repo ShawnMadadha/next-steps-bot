@@ -197,9 +197,11 @@ def confirm(bot_id, ids):
 
 
 def supersede_unmatched(bot_id, ids):
-    """Proposed commitments not in ids become superseded: revised on the call, or not found by the full pass."""
+    """Live commitments (proposed or unsure) not in ids become superseded: revised on the call, or not found by the full pass."""
     with db() as conn:
-        rows = conn.execute("SELECT id FROM commitments WHERE bot_id = ? AND status = 'proposed'", (bot_id,)).fetchall()
+        rows = conn.execute(
+            "SELECT id FROM commitments WHERE bot_id = ? AND status IN ('proposed', 'unsure')", (bot_id,)
+        ).fetchall()
         for row in rows:
             if row["id"] not in ids:
                 conn.execute("UPDATE commitments SET status = 'superseded' WHERE id = ?", (row["id"],))

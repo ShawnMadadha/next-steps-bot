@@ -33,7 +33,7 @@ No keys yet? Set `DRY_RUN=1` and use the replay below. The model is replaced by 
 
 ## How it works
 
-Bot. `POST /bots` creates a Recall bot with `recallai_streaming` transcription in low latency mode and one real-time webhook endpoint for `transcript.data`, pointed at this app with a token in the URL.
+Bot. `POST /bots` creates a Recall bot with `recallai_streaming` transcription in low latency mode, per participant diarization so each utterance carries the right speaker, and one real-time webhook endpoint for `transcript.data`, pointed at this app with a token in the URL.
 
 Live events. Every utterance lands on `/rt`. It's deduped on (bot, participant, start time, text) because Recall retries, then saved. A word list decides whether the utterance might contain a commitment. Only then does the detector run, over the last eight utterances. Anything it returns is fuzzy matched against what's already stored so the same promise isn't added twice. At or above the confidence threshold it shows as proposed, between 0.5 and the threshold as unsure, below 0.5 it's dropped. Recall gets a 200 before any of that runs.
 
@@ -88,13 +88,15 @@ Sqlite and no queue. It's a sample. The production section says what changes.
 
 My first bot used `meeting_captions` as the transcript provider and nothing streamed. That provider only produces a transcript after the call. I switched to `recallai_streaming`.
 
-Every Recall path ends with a slash, so when I forgot to export a bot id in my shell, `/api/v1/bot//send_chat_message/` returned a plain 404 instead of telling me the id was empty. Ten minutes gone.
+Recall's reference paths end with a slash, so when I forgot to export a bot id in my shell, `/api/v1/bot//send_chat_message/` returned a plain 404 instead of telling me the id was empty. Ten minutes gone.
 
 The first version confirmed every live commitment when the call ended, so a revised due date sent two Slack messages. That's where the superseded status came from.
 
 The dry run stub treated "we'll need SSO before anyone logs in" as a promise from the customer. It's a requirement. The model gets this right and the regex didn't, so the stub now skips anything starting with "need".
 
 The first real model run sent nothing. Both passes found the same promises, but the full transcript pass rephrased them, so the string matcher decided they were different commitments, superseded the live ones, and left the new wording waiting for a rep. The post-meeting call is now shown the live commitments and told to keep their wording when it's the same promise, and because a live fragment is usually a shorter version of the full transcript's wording, the matcher also accepts one action contained in the other. Otherwise it stays a dumb string ratio on purpose; the model does the semantic part.
+
+The two person test call came back with every utterance attributed to the host, so the customer's promises showed up as mine, because the diarization flag was not set on the bot. One line in create_bot fixed it.
 
 ## Taking this to production
 
