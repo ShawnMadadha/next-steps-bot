@@ -10,14 +10,14 @@ One line per thing about the Recall API or docs that was confusing, missing, or 
 - Status change webhooks call the timestamp `updated_at`; the same entry in the bot object's `status_changes[]` is `created_at`. Stored here as `created_at`.
 - Retry policy differs. Real-time webhooks retry 60 times, 1 second apart, then the endpoint is marked failed with no manual retry. Dashboard webhooks retry with backoff for 24 hours.
 - Dashboard webhooks time out after 15 seconds. Respond first, do the work in a background task.
-- `recallai_streaming` defaults to `prioritize_accuracy`, which runs an async model under the hood and delays utterances. `prioritize_low_latency` gives 1 to 3 second utterances but only supports `language_code: en`.
+- `recallai_streaming` defaults to `prioritize_accuracy`, which runs an async model under the hood and delivers webhook utterances 3 to 10 minutes late. `prioritize_low_latency` gives 1 to 3 second utterances. A live demo has to use low latency, and nothing on the create bot page says so; it is on docs/recallai-transcription.
 - The transcript download schema (participant + words per utterance) is the same shape as the live `data.data` object, so a downloaded transcript replays as live events unchanged.
-- unverified: The transcript download URL lives at `recordings[].media_shortcuts.transcript.data.download_url`, is null until the recording is done, and is pre-signed (no Authorization header).
+- The transcript download URL lives at `recordings[].media_shortcuts.transcript.data.download_url`, is null until the recording is done, and is pre-signed (no Authorization header). Checked against a real bot response.
 - `meeting_url` on a bot response is an object, not a string. `meeting_url.platform` is one of google_meet, zoom, microsoft_teams, microsoft_teams_live, webex, goto_meeting. It is cleared a few days after the call.
 - Create bot returns 507 when the ad hoc pool is empty. Docs say retry every 30 seconds up to 10 times; production should schedule with `join_at`.
 - The Retrieve Bot reference says polling for bot status is an anti-pattern, which is why the page never asks Recall for status and relies on webhooks.
-- unverified: Every API path ends with a slash (`/api/v1/bot/`). Posting without it can turn into a redirect.
+- The API reference writes every path with a trailing slash (`/api/v1/bot/`) and the quickstart writes it without one (`/api/v1/bot`). Both worked for me. What bit me was an empty path segment: `/bot//send_chat_message/` from an unset shell variable returns a plain 404 with no hint that the id was empty.
 - On docs/sub-codes the Zoom tables are HTML `<Table>` blocks while the rest are markdown tables, so a scraper has to handle both.
-- unverified: The create bot reference says most transcription features are unsupported in `prioritize_low_latency` mode (no diarization options, English only). Good enough for a live demo, switch to the default mode if names or languages matter.
+- `prioritize_low_latency` is English only and the docs say other transcription parameters are not supported in that mode. Good enough for a live demo. Switch to the default mode when languages or the extra transcription options matter and a 3 to 10 minute delay is acceptable.
 - The dashboard webhook sends events for every bot in the workspace, not just the ones this app created, so the handler ignores bot ids it does not know.
 - `recording.done` says all media is available, but the docs for real-time transcription point at `transcript.done` for the transcript. The app listens to both and runs the post-meeting pass on whichever arrives first.
