@@ -1,3 +1,5 @@
+from types import SimpleNamespace
+
 from app import detector
 
 
@@ -52,3 +54,26 @@ def test_stub_drops_the_earlier_version_of_a_revised_promise(monkeypatch):
                     "send the DPA to our CFO", "send the DPA by Wednesday instead"]
     post = [c["action"] for c in detector.detect(utterances, "post_meeting")]
     assert post == ["set up a reference call next week", "send the DPA to our CFO", "send the DPA by Wednesday instead"]
+
+
+def test_post_meeting_prompt_lists_the_live_commitments(monkeypatch):
+    monkeypatch.setenv("DRY_RUN", "0")
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "test")
+    calls = []
+
+    class FakeMessages:
+        def create(self, **kwargs):
+            calls.append(kwargs)
+            return SimpleNamespace(content=[SimpleNamespace(type="text", text='[{"owner": "Shawn", "action": "send the docs", "confidence": 0.9}]')])
+
+    monkeypatch.setattr(detector.anthropic, "Anthropic", lambda: SimpleNamespace(messages=FakeMessages()))
+    utterances = [{"speaker": "Shawn", "text": "I'll send the docs tomorrow."}]
+    live = [{"owner": "Shawn", "action": "send the docs", "due": "tomorrow"}, {"owner": "Priya", "action": "loop in procurement", "due": None}]
+    out = detector.detect(utterances, "post_meeting", known=live)
+    assert out[0]["action"] == "send the docs"
+    content = calls[0]["messages"][0]["content"]
+    assert content.startswith("Mode: post_meeting\n\nTranscript:\nShawn: I'll send the docs tomorrow.")
+    assert "- Shawn | send the docs | tomorrow" in content and "- Priya | loop in procurement | no due" in content
+    assert "Commitments the live pass already found" in calls[0]["system"] or "live pass already found" in calls[0]["system"]
+    detector.detect(utterances, "live")
+    assert "already found" not in calls[1]["messages"][0]["content"]

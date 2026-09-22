@@ -22,17 +22,22 @@ def has_cue(text):
     return any(cue in text for cue in CUES)
 
 
-def detect(utterances, mode):
-    """utterances: rows or dicts with speaker and text. mode: "live" or "post_meeting"."""
+def detect(utterances, mode, known=()):
+    """utterances: rows or dicts with speaker and text. mode: "live" or "post_meeting".
+    known: commitments the live pass already stored, so the post-meeting pass can reuse their wording."""
     if os.environ.get("DRY_RUN") == "1":
         return _stub(utterances, mode)
-    transcript = "\n".join(f"{u['speaker']}: {u['text']}" for u in utterances)
+    content = f"Mode: {mode}\n\nTranscript:\n" + "\n".join(f"{u['speaker']}: {u['text']}" for u in utterances)
+    if known:
+        # The two passes are matched on action text, so the model is asked to keep the live wording for the same promise.
+        content += "\n\nCommitments the live pass already found (owner | action | due):\n" + "\n".join(
+            f"- {c['owner']} | {c['action']} | {c['due'] or 'no due'}" for c in known)
     try:
         response = anthropic.Anthropic().messages.create(
             model=os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5"),
             max_tokens=4096,
             system=PROMPT_PATH.read_text(),
-            messages=[{"role": "user", "content": f"Mode: {mode}\n\nTranscript:\n{transcript}"}],
+            messages=[{"role": "user", "content": content}],
         )
     except anthropic.AnthropicError:
         log.exception("model call failed")

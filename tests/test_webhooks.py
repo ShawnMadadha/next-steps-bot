@@ -123,7 +123,7 @@ def test_revised_commitment_is_superseded_and_sends_once(tmp_path, monkeypatch):
     wednesday = {"owner": "Shawn", "action": "send the DPA by Wednesday", "due": "Wednesday", "confidence": 0.9,
                  "quote": "Actually, I'll send the DPA by Wednesday instead.",
                  "followup_draft": "Following up on our call: I'll send the DPA by Wednesday.\nShout if anything changes."}
-    monkeypatch.setattr(detector, "detect", lambda utterances, mode: [wednesday] if mode == "post_meeting" else [thursday])
+    monkeypatch.setattr(detector, "detect", lambda utterances, mode, **kw: [wednesday] if mode == "post_meeting" else [thursday])
     sent = []
     monkeypatch.setattr(actions, "send_followup", sent.append)
 

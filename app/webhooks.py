@@ -105,7 +105,8 @@ def post_meeting_pass(bot_id):
 def reconcile(bot_id, utterances):
     existing = store.list_commitments(bot_id)
     matched = set()
-    for found in detector.detect(utterances, "post_meeting"):
+    live = [c for c in existing if c["status"] in ("proposed", "unsure")]
+    for found in detector.detect(utterances, "post_meeting", known=live):
         match = find_match(found, existing)
         if match is not None:
             matched.add(match["id"])

@@ -52,3 +52,5 @@ The first line of the message is "Mode: live" or "Mode: post_meeting".
 live: you see only the last few utterances of a call in progress. Extract only commitments made in these lines. Do not infer context you cannot see. Return [] when there is nothing.
 
 post_meeting: you see the whole call. Extract every commitment. When someone revises a commitment, keep only the final version. For each commitment write followup_draft: two lines, plain text, written from the owner's point of view to the other party, restating the action and the due date. No greeting, no subject line, no sign off.
+
+The message may end with a list of commitments the live pass already found. When one of them is the same promise as what you see in the full transcript, return it with exactly the same owner, action and due text, so the two can be matched. If the call revised that promise, return the revised version instead. Do not return a live commitment that the full transcript does not support.
