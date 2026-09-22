@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Next steps</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+  h1, h2 { font-weight: 600; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: .4rem .6rem; border-bottom: 1px solid #ddd; vertical-align: top; }
+  input[type=url] { width: 24rem; padding: .4rem; }
+  button { padding: .4rem .8rem; }
+  .muted { color: #777; }
+</style>
+</head>
+<body>
+<h1>Next steps</h1>
+<form method="post" action="/bots">
+  <input type="url" name="meeting_url" placeholder="https://meet.google.com/xxx-xxxx-xxx" required>
+  <button type="submit">Send bot</button>
+</form>
+
+<h2>Bots</h2>
+{% if bots %}
+<table>
+  <tr><th>Platform</th><th>Status</th><th>Commitments</th><th>Created</th><th>Bot</th></tr>
+  {% for b in bots %}
+  <tr>
+    <td>{{ b.platform }}</td>
+    <td>{{ b.status_text }}</td>
+    <td>{{ b.commitment_count }}</td>
+    <td class="muted">{{ b.created_at }}</td>
+    <td><a href="/bots/{{ b.id }}">{{ b.id }}</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p class="muted">No bots yet. Paste a meeting link above, or run scripts/replay.py.</p>
+{% endif %}
+</body>
+</html>

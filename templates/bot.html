@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+{% if not bot.ended %}<meta http-equiv="refresh" content="3">{% endif %}
+<title>Bot {{ bot.id }}</title>
+<style>
+  body { font: 15px/1.5 system-ui, sans-serif; max-width: 960px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+  h1, h2 { font-weight: 600; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: .4rem .6rem; border-bottom: 1px solid #ddd; vertical-align: top; }
+  button { padding: .3rem .7rem; }
+  form.inline { display: inline; }
+  .muted { color: #777; }
+  .status { font-size: .85em; padding: .1rem .4rem; border-radius: .3rem; background: #eee; white-space: nowrap; }
+  .status-proposed, .status-confirmed { background: #d9e8f2; }
+  .status-unsure, .status-post_meeting { background: #f7ecc8; }
+  .status-sent { background: #d9f2d9; }
+  .status-dismissed { background: #eee; color: #777; text-decoration: line-through; }
+  pre.draft { white-space: pre-wrap; background: #f6f6f6; padding: .6rem; margin: .3rem 0; font: inherit; }
+</style>
+</head>
+<body>
+<p><a href="/">All bots</a></p>
+<h1>{{ bot.platform }} call</h1>
+<p class="muted">{{ bot.meeting_url }}<br>Bot {{ bot.id }}, {% if bot.ended %}ended{% else %}live, this page refreshes every 3 seconds{% endif %}</p>
+
+<h2>Commitments</h2>
+{% if commitments %}
+<table>
+  <tr><th>#</th><th>Owner</th><th>Action</th><th>Due</th><th>Status</th><th>Confidence</th><th>Quote</th></tr>
+  {% for c in commitments %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ c.owner }}</td>
+    <td>{{ c.action }}</td>
+    <td>{{ c.due or "" }}</td>
+    <td><span class="status status-{{ c.status }}">{{ c.status_text }}</span></td>
+    <td>{{ "%.2f"|format(c.confidence) }}</td>
+    <td class="muted">{{ c.quote }}</td>
+  </tr>
+  {% endfor %}
+</table>
+{% else %}
+<p class="muted">Nothing yet.</p>
+{% endif %}
+
+<h2>Transcript</h2>
+{% for u in utterances %}
+<p><span class="muted">{{ "%.0f"|format(u.start_ts) }}s</span> <strong>{{ u.speaker }}</strong>: {{ u.text }}</p>
+{% else %}
+<p class="muted">Waiting for the first utterance.</p>
+{% endfor %}
+</body>
+</html>
