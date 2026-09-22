@@ -7,7 +7,8 @@ Every utterance then goes through the real /rt path over HTTP. Watch it at /bots
 --finish also sends signed dashboard webhooks (bot status changes and recording.done) so the
 post-meeting pass runs, which needs RECALL_WEBHOOK_SECRET in .env (any whsec_ value works locally).
 
-TODO(Shawn): fixtures/call.json is a hand written placeholder until scripts/make_fixture.py is run on a real call.
+Recall's download merges a whole speaker turn into one utterance, while the live feed delivers it in
+fragments split on pauses. Replay splits each turn on gaps of more than a second so it looks like the live feed.
 """
 import argparse
 import json
@@ -42,6 +43,20 @@ def transcript_event(bot_id, entry):
             "bot": {"id": bot_id, "metadata": {"app": "next-steps"}},
         },
     }
+
+
+def split_on_pauses(entry, gap=1.0):
+    parts, words = [], []
+    for w in entry["words"]:
+        if words:
+            previous_end = (words[-1].get("end_timestamp") or words[-1]["start_timestamp"])["relative"]
+            if w["start_timestamp"]["relative"] - previous_end > gap:
+                parts.append({**entry, "words": words})
+                words = []
+        words.append(w)
+    if words:
+        parts.append({**entry, "words": words})
+    return parts
 
 
 def status_event(bot_id, event, code, sub_code=None):
@@ -81,7 +96,7 @@ def main():
     if args.finish and not secret.startswith("whsec_"):
         sys.exit("--finish needs RECALL_WEBHOOK_SECRET in .env (any whsec_ value works for a local replay)")
 
-    entries = json.loads(Path(args.fixture).read_text())
+    entries = [part for entry in json.loads(Path(args.fixture).read_text()) for part in split_on_pauses(entry)]
     store.init()
     store.add_bot(args.bot_id, f"replay:{args.fixture}", "Replay")
     print(f"watch {args.url}/bots/{args.bot_id}")

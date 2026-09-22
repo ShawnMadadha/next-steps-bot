@@ -1,14 +1,12 @@
 import json
 import time
-from pathlib import Path
 
 from fastapi.testclient import TestClient
 
 from app import actions, detector, realtime, store, webhooks
 from app.main import app
-from tests.test_realtime import fixture_event, fresh
+from tests.test_realtime import entry_event, event, fresh, make_call
 
-ROOT = Path(__file__).resolve().parents[1]
 SECRET = "whsec_dGVzdC1zZWNyZXQtdGVzdC1zZWNyZXQtMTIzNA=="
 
 
@@ -79,17 +77,21 @@ def test_bot_done_marks_the_bot_ended(tmp_path, monkeypatch):
 def test_post_meeting_pass_reconciles_live_commitments(tmp_path, monkeypatch):
     fresh(tmp_path, monkeypatch)
     monkeypatch.setenv("RECALL_WEBHOOK_SECRET", SECRET)
-    store.add_bot("replay-1", f"replay:{ROOT / 'fixtures' / 'call.json'}", "Replay")
+    entries = make_call(tmp_path / "call.json")
+    store.add_bot("replay-1", f"replay:{tmp_path / 'call.json'}", "Replay")
+    store.add_bot("replay-2", f"replay:{tmp_path / 'call.json'}", "Replay")
     # Three utterances arrive live (unsure, proposed, proposed); the rest of the call is "missed" live.
-    realtime.handle_event(fixture_event(0, bot_id="replay-1"))
-    realtime.handle_event(fixture_event(2, bot_id="replay-1"))  # DPA by Thursday, revised to Wednesday later in the call
-    realtime.handle_event(fixture_event(6, bot_id="replay-1"))  # SSO setup guide tomorrow
+    realtime.handle_event(entry_event(entries[0], bot_id="replay-1"))
+    realtime.handle_event(entry_event(entries[2], bot_id="replay-1"))  # DPA by Thursday, revised to Wednesday later
+    realtime.handle_event(entry_event(entries[5], bot_id="replay-1"))  # SSO setup guide tomorrow
     assert [c["status"] for c in store.list_commitments("replay-1")] == ["unsure", "proposed", "proposed"]
 
     with TestClient(app) as client:
         assert post_signed(client, status_body("recording.done", "done", bot_id="replay-1")).status_code == 200
         before = len(store.list_commitments("replay-1"))
         assert post_signed(client, status_body("transcript.done", "done", bot_id="replay-1")).status_code == 200
+        # A bot whose live path saw nothing gets its transcript from the download.
+        assert post_signed(client, status_body("recording.done", "done", bot_id="replay-2")).status_code == 200
 
     bot = store.get_bot("replay-1")
     assert bot["ended"] == 1 and bot["post_meeting_at"]
@@ -100,7 +102,8 @@ def test_post_meeting_pass_reconciles_live_commitments(tmp_path, monkeypatch):
     assert (rows[2]["status"], rows[2]["sent_via"]) == ("sent", "auto")  # confirmed, then sent by the gate
     assert {r["status"] for r in rows[3:]} == {"post_meeting"}
     assert all(r["followup_draft"] for r in rows if r["status"] != "superseded")
-    assert len(store.list_utterances("replay-1")) == 14  # backfilled from the transcript
+    assert len(store.list_utterances("replay-1")) == 3  # the live transcript stays as it was
+    assert len(store.list_utterances("replay-2")) == len(entries)
 
 
 def test_template_draft_does_not_repeat_the_due_date():
@@ -113,7 +116,8 @@ def test_template_draft_does_not_repeat_the_due_date():
 def test_revised_commitment_is_superseded_and_sends_once(tmp_path, monkeypatch):
     fresh(tmp_path, monkeypatch)
     monkeypatch.setenv("RECALL_WEBHOOK_SECRET", SECRET)
-    store.add_bot("replay-1", f"replay:{ROOT / 'fixtures' / 'call.json'}", "Replay")
+    make_call(tmp_path / "call.json")
+    store.add_bot("replay-1", f"replay:{tmp_path / 'call.json'}", "Replay")
     thursday = {"owner": "Shawn", "action": "send the DPA by Thursday", "due": "Thursday", "confidence": 0.9,
                 "quote": "I'll send the DPA by Thursday.", "followup_draft": None}
     wednesday = {"owner": "Shawn", "action": "send the DPA by Wednesday", "due": "Wednesday", "confidence": 0.9,
@@ -123,7 +127,7 @@ def test_revised_commitment_is_superseded_and_sends_once(tmp_path, monkeypatch):
     sent = []
     monkeypatch.setattr(actions, "send_followup", sent.append)
 
-    realtime.handle_event(fixture_event(2, bot_id="replay-1"))
+    realtime.handle_event(event("I'll send the DPA by Thursday.", bot_id="replay-1"))
     assert [(c["action"], c["status"]) for c in store.list_commitments("replay-1")] == [("send the DPA by Thursday", "proposed")]
 
     with TestClient(app) as client:

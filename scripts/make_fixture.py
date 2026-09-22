@@ -3,7 +3,8 @@
     .venv/bin/python scripts/make_fixture.py <bot_id>
 
 Needs RECALL_API_KEY in .env. Run it after the bot's recording.done arrived; before that there is no
-transcript download url and this prints the recording status instead.
+transcript download url and this prints the recording status instead. The file is saved exactly as Recall
+returns it: one entry per speaker turn, which replay.py splits on pauses to look like the live feed.
 """
 import json
 import sys

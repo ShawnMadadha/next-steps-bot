@@ -50,7 +50,7 @@ Follow-ups. Each confirmed or post-meeting commitment gets a two line draft from
 .venv/bin/python scripts/replay.py --speed 4 --finish
 ```
 
-The first command saves a finished bot's transcript as `fixtures/call.json`. Recall's download format is the same shape as the live event payload, so the second command can play it back through `/rt` at real pacing (`--speed 4` is four times faster) and, with `--finish`, send the end of call webhooks so the post-meeting pass and follow-ups run too. This is how I demo it without a live meeting. The fixture in this repo is a hand written placeholder until I've run it on a real call.
+The first command saves a finished bot's transcript as `fixtures/call.json`. Recall's download format is the same shape as the live event payload, so the second command can play it back through `/rt` at real pacing (`--speed 4` is four times faster) and, with `--finish`, send the end of call webhooks so the post-meeting pass and follow-ups run too. This is how I demo it without a live meeting.
 
 ## Decisions I made
 
