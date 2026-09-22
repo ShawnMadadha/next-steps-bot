@@ -91,16 +91,21 @@ def post_meeting_pass(bot_id):
         utterances.append({"speaker": speaker, "text": text})
 
     existing = store.list_commitments(bot_id)
+    matched = set()
     for found in detector.detect(utterances, "post_meeting"):
         match = find_match(found, existing)
         if match is not None:
+            matched.add(match["id"])
             if found["followup_draft"] and not match["followup_draft"]:
                 store.set_followup(match["id"], found["followup_draft"])
         elif status_for(found["confidence"]) is not None:  # same 0.5 floor as the live path
             new_id = store.add_commitment(bot_id, found, "post_meeting", found["followup_draft"])
             existing.append(store.get_commitment(new_id))
 
-    store.confirm_proposed(bot_id)
+    # Confirmed means both passes saw it. A live commitment the full pass did not return was revised or misheard,
+    # so it is superseded: no draft, never sent.
+    store.confirm(bot_id, matched)
+    store.supersede_unmatched(bot_id, matched)
     # Unsure ones get a draft too, so a rep can approve them from the page.
     for c in store.list_commitments(bot_id):
         if c["status"] in ("confirmed", "post_meeting", "unsure") and not c["followup_draft"]:

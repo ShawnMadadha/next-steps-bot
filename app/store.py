@@ -185,9 +185,23 @@ def set_followup(commitment_id, draft):
         conn.execute("UPDATE commitments SET followup_draft = ? WHERE id = ?", (draft, commitment_id))
 
 
-def confirm_proposed(bot_id):
+def confirm(bot_id, ids):
+    """Proposed commitments in ids become confirmed."""
     with db() as conn:
-        conn.execute("UPDATE commitments SET status = 'confirmed' WHERE bot_id = ? AND status = 'proposed'", (bot_id,))
+        for commitment_id in ids:
+            conn.execute(
+                "UPDATE commitments SET status = 'confirmed' WHERE bot_id = ? AND id = ? AND status = 'proposed'",
+                (bot_id, commitment_id),
+            )
+
+
+def supersede_unmatched(bot_id, ids):
+    """Proposed commitments not in ids become superseded: revised on the call, or not found by the full pass."""
+    with db() as conn:
+        rows = conn.execute("SELECT id FROM commitments WHERE bot_id = ? AND status = 'proposed'", (bot_id,)).fetchall()
+        for row in rows:
+            if row["id"] not in ids:
+                conn.execute("UPDATE commitments SET status = 'superseded' WHERE id = ?", (row["id"],))
 
 
 # webhook events

@@ -107,10 +107,12 @@ def test_unsure_band_and_unknown_bot(tmp_path, monkeypatch):
 
 
 def test_fuzzy_match():
-    existing = [{"owner": "Shawn", "action": "send the signed order form"}]
-    assert realtime.find_match({"owner": "shawn", "action": "send signed order form"}, existing) is existing[0]
-    assert realtime.find_match({"owner": "Priya", "action": "send the signed order form"}, existing) is None
-    assert realtime.find_match({"owner": "Shawn", "action": "book a reference call"}, existing) is None
+    existing = [{"owner": "Shawn", "action": "send the signed order form", "due": "Thursday"}]
+    assert realtime.find_match({"owner": "shawn", "action": "send signed order form", "due": None}, existing) is existing[0]
+    assert realtime.find_match({"owner": "Shawn", "action": "send the signed order form", "due": "by thursday"}, existing) is existing[0]
+    assert realtime.find_match({"owner": "Shawn", "action": "send the signed order form", "due": "Wednesday"}, existing) is None
+    assert realtime.find_match({"owner": "Priya", "action": "send the signed order form", "due": "Thursday"}, existing) is None
+    assert realtime.find_match({"owner": "Shawn", "action": "book a reference call", "due": None}, existing) is None
 
 
 def test_near_duplicate_commitment_is_not_added_twice(tmp_path, monkeypatch):

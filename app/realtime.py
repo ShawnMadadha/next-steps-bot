@@ -1,6 +1,7 @@
 import hmac
 import logging
 import os
+import re
 import threading
 from difflib import SequenceMatcher
 
@@ -78,6 +79,14 @@ def find_match(found, existing):
     for other in existing:
         if other["owner"].lower() != found["owner"].lower():
             continue
-        if SequenceMatcher(None, other["action"].lower(), found["action"].lower()).ratio() > MATCH_RATIO:
-            return other
+        if SequenceMatcher(None, other["action"].lower(), found["action"].lower()).ratio() <= MATCH_RATIO:
+            continue
+        # Same action with a different due date is a revision ("Thursday, actually Wednesday"), not the same promise.
+        if other["due"] and found["due"] and _due(other["due"]) != _due(found["due"]):
+            continue
+        return other
     return None
+
+
+def _due(text):
+    return re.sub(r"^(by|on)\s+", "", text.strip().lower())

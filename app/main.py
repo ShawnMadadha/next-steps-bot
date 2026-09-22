@@ -20,7 +20,7 @@ PLATFORMS = {
     "webex": "Webex",
     "goto_meeting": "GoTo Meeting",
 }
-STATUS_TEXT = {"post_meeting": "found after the call"}
+STATUS_TEXT = {"post_meeting": "found after the call", "superseded": "superseded (revised or not found in full transcript)"}
 
 
 @asynccontextmanager

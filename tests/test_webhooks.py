@@ -4,7 +4,7 @@ from pathlib import Path
 
 from fastapi.testclient import TestClient
 
-from app import realtime, store, webhooks
+from app import actions, detector, realtime, store, webhooks
 from app.main import app
 from tests.test_realtime import fixture_event, fresh
 
@@ -106,3 +106,34 @@ def test_template_draft_does_not_repeat_the_due_date():
     assert webhooks.template_draft(c).startswith("Following up on our call: I'll send the DPA by Thursday.\n")
     c = {"action": "send the DPA", "due": "Thursday"}
     assert "send the DPA, Thursday." in webhooks.template_draft(c)
+
+
+def test_revised_commitment_is_superseded_and_sends_once(tmp_path, monkeypatch):
+    fresh(tmp_path, monkeypatch)
+    monkeypatch.setenv("RECALL_WEBHOOK_SECRET", SECRET)
+    store.add_bot("replay-1", f"replay:{ROOT / 'fixtures' / 'call.json'}", "Replay")
+    thursday = {"owner": "Shawn", "action": "send the DPA by Thursday", "due": "Thursday", "confidence": 0.9,
+                "quote": "I'll send the DPA by Thursday.", "followup_draft": None}
+    wednesday = {"owner": "Shawn", "action": "send the DPA by Wednesday", "due": "Wednesday", "confidence": 0.9,
+                 "quote": "Actually, I'll send the DPA by Wednesday instead.",
+                 "followup_draft": "Following up on our call: I'll send the DPA by Wednesday.\nShout if anything changes."}
+    monkeypatch.setattr(detector, "detect", lambda utterances, mode: [wednesday] if mode == "post_meeting" else [thursday])
+    sent = []
+    monkeypatch.setattr(actions, "send_followup", sent.append)
+
+    realtime.handle_event(fixture_event(2, bot_id="replay-1"))
+    assert [(c["action"], c["status"]) for c in store.list_commitments("replay-1")] == [("send the DPA by Thursday", "proposed")]
+
+    with TestClient(app) as client:
+        assert post_signed(client, status_body("recording.done", "done", bot_id="replay-1")).status_code == 200
+        rows = store.list_commitments("replay-1")
+        assert [(c["action"], c["status"]) for c in rows] == [
+            ("send the DPA by Thursday", "superseded"), ("send the DPA by Wednesday", "post_meeting")]
+        assert rows[0]["followup_draft"] is None and rows[1]["followup_draft"]
+        assert sent == []  # post_meeting waits for a rep, superseded never sends
+        page = client.get("/bots/replay-1").text
+        assert "superseded (revised or not found in full transcript)" in page
+        assert client.post(f"/commitments/{rows[1]['id']}/approve").status_code == 200
+        assert client.post(f"/commitments/{rows[0]['id']}/approve").status_code == 404
+    assert [c["action"] for c in sent] == ["send the DPA by Wednesday"]
+    assert store.get_commitment(rows[0]["id"])["status"] == "superseded"
