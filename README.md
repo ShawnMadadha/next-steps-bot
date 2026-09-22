@@ -49,7 +49,7 @@ The index lists every bot with its platform, current status and commitment count
 
 ![Index page with one live bot](docs/screenshots/01-index.png)
 
-Mid call. The transcript is arriving in fragments. "I'll send over the red lined MSA to your legal team by Thursday" is already a proposed commitment at 0.95, and "we'll need SSO" was left alone because it is a requirement, not a promise.
+Mid call. "I'll send a red line MSA to your legal team by Thursday" is already a proposed commitment at 0.90, and "we'll need SSO" was left alone because it is a requirement, not a promise.
 
 ![Bot page during the call: status timeline, live commitments, transcript](docs/screenshots/02-live-commitments.png)
 
@@ -57,7 +57,7 @@ After the call. The Thursday version is superseded, the Wednesday version was co
 
 ![Bot page after the call: superseded, sent, unsure, follow-ups](docs/screenshots/03-after-the-call.png)
 
-The Slack post the app sent on its own for the confirmed commitment.
+The Slack posts the app sent on its own for the two confirmed commitments.
 
 ![Slack channel with the follow-up posted by the bot](docs/screenshots/04-slack.png)
 
