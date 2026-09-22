@@ -48,7 +48,7 @@ Follow-ups. Each confirmed or post-meeting commitment gets a two line draft from
 .venv/bin/python scripts/replay.py --speed 4 --finish
 ```
 
-The first command saves a finished bot's transcript as `fixtures/call.json`. The second plays it back through `/rt` at real pacing (`--speed 4` is four times faster) and, with `--finish`, sends the end of call webhooks so the post-meeting pass and follow-ups run too. `fixtures/call.json` ships as a hand written placeholder until `make_fixture.py` has been run on a real call.
+The first command saves a finished bot's transcript as `fixtures/call.json`. The second plays it back through `/rt` at real pacing (`--speed 4` is four times faster) and, with `--finish`, sends the end of call webhooks so the post-meeting pass and follow-ups run too. TODO(Shawn): `fixtures/call.json` ships as a hand written placeholder until `make_fixture.py` has been run on a real call.
 
 ## Decisions I made
 

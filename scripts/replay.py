@@ -7,7 +7,7 @@ Every utterance then goes through the real /rt path over HTTP. Watch it at /bots
 --finish also sends signed dashboard webhooks (bot status changes and recording.done) so the
 post-meeting pass runs, which needs RECALL_WEBHOOK_SECRET in .env (any whsec_ value works locally).
 
-fixtures/call.json is a hand written placeholder until scripts/make_fixture.py is run on a real call.
+TODO(Shawn): fixtures/call.json is a hand written placeholder until scripts/make_fixture.py is run on a real call.
 """
 import argparse
 import json
