@@ -76,6 +76,8 @@ The first version confirmed every live commitment when the call ended, so a revi
 
 The dry run stub treated "we'll need SSO before anyone logs in" as a promise from the customer. It's a requirement. The model gets this right and the regex didn't, so the stub now skips anything starting with "need".
 
+The first real model run sent nothing. Both passes found the same promises, but the full transcript pass rephrased them, so the string matcher decided they were different commitments, superseded the live ones, and left the new wording waiting for a rep. The post-meeting call is now shown the live commitments and told to keep their wording when it's the same promise. The matcher stays a dumb string ratio on purpose; the model does the semantic part.
+
 ## Taking this to production
 
 Schedule bots from the calendar with `join_at` instead of creating them ad hoc. Ad hoc bots can return 507 when the pool is empty.
