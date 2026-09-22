@@ -18,3 +18,6 @@ One line per thing about the Recall API or docs that was confusing, missing, or 
 - The Retrieve Bot reference says polling for bot status is an anti-pattern, which is why the page never asks Recall for status and relies on webhooks.
 - Every API path ends with a slash (`/api/v1/bot/`). Posting without it can turn into a redirect.
 - On docs/sub-codes the Zoom tables are HTML `<Table>` blocks while the rest are markdown tables, so a scraper has to handle both.
+- The create bot reference says most transcription features are unsupported in `prioritize_low_latency` mode (no diarization options, English only). Good enough for a live demo, switch to the default mode if names or languages matter.
+- The dashboard webhook sends events for every bot in the workspace, not just the ones this app created, so the handler ignores bot ids it does not know.
+- `recording.done` says all media is available, but the docs for real-time transcription point at `transcript.done` for the transcript. The app listens to both and runs the post-meeting pass on whichever arrives first.

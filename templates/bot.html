@@ -25,6 +25,17 @@
 <h1>{{ bot.platform }} call</h1>
 <p class="muted">{{ bot.meeting_url }}<br>Bot {{ bot.id }}, {% if bot.ended %}ended{% else %}live, this page refreshes every 3 seconds{% endif %}</p>
 
+<h2>Status</h2>
+{% if timeline %}
+<table>
+  {% for t in timeline %}
+  <tr><td class="muted">{{ t.created_at }}</td><td>{{ t.text }}</td></tr>
+  {% endfor %}
+</table>
+{% else %}
+<p class="muted">No status changes yet.</p>
+{% endif %}
+
 <h2>Commitments</h2>
 {% if commitments %}
 <table>
@@ -43,6 +54,16 @@
 </table>
 {% else %}
 <p class="muted">Nothing yet.</p>
+{% endif %}
+
+{% if bot.ended %}
+<h2>Follow-ups</h2>
+{% for c in commitments if c.followup_draft %}
+<p><strong>{{ c.owner }}</strong>: {{ c.action }} <span class="status status-{{ c.status }}">{{ c.status_text }}</span></p>
+<pre class="draft">{{ c.followup_draft }}</pre>
+{% else %}
+<p class="muted">No follow-ups drafted.</p>
+{% endfor %}
 {% endif %}
 
 <h2>Transcript</h2>

@@ -7,7 +7,7 @@ from fastapi import FastAPI, Form, HTTPException, Request
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 
-from app import realtime, recall, store
+from app import realtime, recall, store, subcodes, webhooks
 
 load_dotenv()
 logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
@@ -31,12 +31,14 @@ async def lifespan(app):
 
 app = FastAPI(lifespan=lifespan)
 app.include_router(realtime.router)
+app.include_router(webhooks.router)
 templates = Jinja2Templates(directory=str(Path(__file__).resolve().parents[1] / "templates"))
 
 
 @app.get("/")
 def index(request: Request):
-    bots = [dict(b) | {"status_text": b["status"] or "created"} for b in store.list_bots()]
+    bots = [dict(b) | {"status_text": subcodes.describe(b["status"]) if b["status"] else "created"}
+            for b in store.list_bots()]
     return templates.TemplateResponse(request, "index.html", {"bots": bots})
 
 
@@ -58,9 +60,12 @@ def bot_page(request: Request, bot_id: str):
     bot = store.get_bot(bot_id)
     if bot is None:
         raise HTTPException(status_code=404)
+    timeline = [{"created_at": s["created_at"], "text": subcodes.describe(s["code"], s["sub_code"])}
+                for s in store.list_status_changes(bot_id)]
     commitments = [dict(c) | {"status_text": status_text(c)} for c in store.list_commitments(bot_id)]
     return templates.TemplateResponse(request, "bot.html", {
         "bot": bot,
+        "timeline": timeline,
         "commitments": commitments,
         "utterances": store.list_utterances(bot_id),
     })

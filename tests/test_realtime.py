@@ -41,6 +41,20 @@ def event(text, speaker="Shawn", participant_id=100, start=1.0, bot_id="bot-1"):
     }
 
 
+def fixture_event(index, bot_id="bot-1"):
+    entry = FIXTURE[index]
+    return {
+        "event": "transcript.data",
+        "data": {
+            "data": {"words": entry["words"], "language_code": "en", "participant": entry["participant"]},
+            "realtime_endpoint": {"id": "e", "metadata": {}},
+            "transcript": {"id": "t", "metadata": {}},
+            "recording": {"id": "r", "metadata": {}},
+            "bot": {"id": bot_id, "metadata": {}},
+        },
+    }
+
+
 def test_fixture_has_recall_transcript_shape():
     assert isinstance(FIXTURE, list) and FIXTURE
     for entry in FIXTURE:
@@ -57,17 +71,7 @@ def test_bad_token_is_rejected(tmp_path, monkeypatch):
 
 def test_retried_event_is_stored_once(tmp_path, monkeypatch):
     fresh(tmp_path, monkeypatch)
-    first = FIXTURE[0]
-    body = {
-        "event": "transcript.data",
-        "data": {
-            "data": {"words": first["words"], "language_code": "en", "participant": first["participant"]},
-            "realtime_endpoint": {"id": "e", "metadata": {}},
-            "transcript": {"id": "t", "metadata": {}},
-            "recording": {"id": "r", "metadata": {}},
-            "bot": {"id": "bot-1", "metadata": {}},
-        },
-    }
+    body = fixture_event(0)
     with TestClient(app) as client:
         assert client.post("/rt/?token=t", json=body).status_code == 200
         assert client.post("/rt/?token=t", json=body).status_code == 200
